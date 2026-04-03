@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bass Forecast Site Audit — April 2026</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0f172a;color:#e2e8f0;line-height:1.6}
+.container{max-width:1200px;margin:0 auto;padding:20px}
+h1{font-size:2rem;font-weight:700;margin-bottom:4px;color:#f8fafc}
+.subtitle{color:#94a3b8;margin-bottom:30px;font-size:0.95rem}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:36px}
+.stat-card{background:#1e293b;border-radius:12px;padding:20px;border:1px solid #334155}
+.stat-card.red{border-color:#ef4444}
+.stat-card.orange{border-color:#f97316}
+.stat-card.yellow{border-color:#eab308}
+.stat-card.green{border-color:#22c55e}
+.stat-number{font-size:2.5rem;font-weight:800;line-height:1}
+.stat-number.red{color:#ef4444}
+.stat-number.orange{color:#f97316}
+.stat-number.yellow{color:#eab308}
+.stat-number.green{color:#22c55e}
+.stat-label{color:#94a3b8;font-size:0.85rem;margin-top:6px}
+.tabs{display:flex;gap:4px;margin-bottom:0;flex-wrap:wrap}
+.tab{padding:10px 18px;background:#1e293b;border:1px solid #334155;border-bottom:none;border-radius:8px 8px 0 0;cursor:pointer;color:#94a3b8;font-size:0.85rem;font-weight:500;transition:all 0.2s}
+.tab:hover{color:#e2e8f0;background:#283548}
+.tab.active{background:#1e293b;color:#f8fafc;border-color:#475569;border-bottom:1px solid #1e293b;position:relative;z-index:1}
+.panel{display:none;background:#1e293b;border:1px solid #475569;border-radius:0 8px 8px 8px;padding:24px;margin-bottom:36px}
+.panel.active{display:block}
+table{width:100%;border-collapse:collapse;font-size:0.85rem}
+th{text-align:left;padding:10px 12px;background:#0f172a;color:#94a3b8;font-weight:600;text-transform:uppercase;font-size:0.75rem;letter-spacing:0.05em;position:sticky;top:0}
+td{padding:10px 12px;border-top:1px solid #334155}
+tr:hover td{background:#283548}
+a{color:#60a5fa;text-decoration:none}
+a:hover{text-decoration:underline;color:#93bbfd}
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600}
+.badge-red{background:#991b1b;color:#fca5a5}
+.badge-orange{background:#92400e;color:#fdba74}
+.badge-green{background:#166534;color:#86efac}
+.badge-blue{background:#1e3a5f;color:#93c5fd}
+.badge-yellow{background:#713f12;color:#fde047}
+.section-title{font-size:1.3rem;font-weight:700;margin:36px 0 16px;color:#f8fafc;display:flex;align-items:center;gap:10px}
+.section-title .icon{font-size:1.5rem}
+.callout{background:#1e293b;border-left:4px solid #ef4444;padding:16px 20px;border-radius:0 8px 8px 0;margin-bottom:24px}
+.callout.warning{border-color:#f97316}
+.callout.info{border-color:#3b82f6}
+.callout-title{font-weight:700;color:#f8fafc;margin-bottom:4px}
+.callout p{color:#94a3b8;font-size:0.9rem}
+.progress-bar{background:#334155;border-radius:99px;height:8px;overflow:hidden;margin-top:8px}
+.progress-fill{height:100%;border-radius:99px}
+.scroll-table{max-height:500px;overflow-y:auto;border-radius:8px}
+.verify-link{font-size:0.75rem;color:#94a3b8;margin-left:8px}
+.verify-link:hover{color:#60a5fa}
+.footer{text-align:center;color:#475569;font-size:0.8rem;padding:40px 0 20px;border-top:1px solid #1e293b;margin-top:40px}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Bass Forecast Site Audit</h1>
+<p class="subtitle">Prepared by Bill Welch — April 3, 2026 — All 226 articles crawled, every link verified live — No internal access required</p>
+
+<!-- STAT CARDS -->
+<div class="stat-grid">
+<div class="stat-card red">
+<div class="stat-number red">41</div>
+<div class="stat-label">Broken Product Links (404)</div>
+</div>
+<div class="stat-card red">
+<div class="stat-number red">226</div>
+<div class="stat-label">Pages with Dead App Download CTA</div>
+</div>
+<div class="stat-card orange">
+<div class="stat-number orange">175</div>
+<div class="stat-label">Untracked Affiliate Links</div>
+</div>
+<div class="stat-card yellow">
+<div class="stat-number yellow">1/50</div>
+<div class="stat-label">State Pages Built</div>
+</div>
+<div class="stat-card yellow">
+<div class="stat-number yellow">0</div>
+<div class="stat-label">Lake Pages (vs 17,747 on LakeMonster)</div>
+</div>
+<div class="stat-card green">
+<div class="stat-number green">226</div>
+<div class="stat-label">Articles Crawled (100%)</div>
+</div>
+</div>
+
+<!-- CRITICAL ALERT -->
+<div class="callout">
+<div class="callout-title">CRITICAL: App Download Link Dead Sitewide</div>
+<p>The OneLink deep link (<a href="https://bassforecast.onelink.me/5aRm/96pkic2d" target="_blank">bassforecast.onelink.me/5aRm/96pkic2d</a>) returns 404 on ALL 226 articles. Every "Download the App" CTA on the entire website goes to a dead page. Click to verify.</p>
+</div>
+
+<!-- TABS -->
+<div class="tabs">
+<div class="tab active" onclick="showTab('broken')">Broken Links (41)</div>
+<div class="tab" onclick="showTab('tracking')">Bad Tracking (175)</div>
+<div class="tab" onclick="showTab('states')">State Pages</div>
+<div class="tab" onclick="showTab('lakes')">Lake Pages</div>
+<div class="tab" onclick="showTab('seo')">SEO Issues</div>
+</div>
+
+<!-- BROKEN LINKS TAB -->
+<div class="panel active" id="tab-broken">
+<div class="callout warning">
+<div class="callout-title">How to verify: Click any "Broken URL" link below. You'll see the 404 page yourself.</div>
+</div>
+
+<h3 style="margin-bottom:12px;color:#f8fafc">Tackle Warehouse — 30 Broken Product Links</h3>
+<div class="scroll-table">
+<table>
+<thead><tr><th>Article</th><th>Product</th><th>Broken URL (click to verify)</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td><a href="https://bassforecast.com/best-baitcasting-reels-for-bass-fishing" target="_blank">best-baitcasting-reels</a></td><td>Abu Garcia Max X</td><td><a href="https://www.tacklewarehouse.com/Abu_Garcia_Max_X_Casting_Reel/descpage-AGMXX.html?=BFOR" target="_blank">descpage-AGMXX.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/best-baitcasting-reels-for-bass-fishing" target="_blank">best-baitcasting-reels</a></td><td>Abu Garcia Max 4</td><td><a href="https://www.tacklewarehouse.com/Abu_Garcia_Max_4_Casting_Reel/descpage-AGM4.html?from=BFOR" target="_blank">descpage-AGM4.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/best-baitcasting-reels-for-bass-fishing" target="_blank">best-baitcasting-reels</a></td><td>KastKing iReel 2</td><td><a href="https://www.tacklewarehouse.com/KastKing_iReel_2_IFC_Smart_Casting_Reel/descpage-KZSIRT.html?from=BFOR" target="_blank">descpage-KZSIRT.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/best-landing-nets-for-bass-fishing" target="_blank">best-landing-nets</a></td><td>Frabill Trophy Haul Bearclaw</td><td><a href="https://www.tacklewarehouse.com/Frabill_Trophy_Haul_Bearclaw_Net/descpage-FBC.html?from=BFOR" target="_blank">descpage-FBC.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/bass-fishing-in-the-fall" target="_blank">bass-fishing-in-the-fall</a></td><td>Lew's Category Page</td><td><a href="https://www.tacklewarehouse.com/catpage-LEWUPPLP.html?=BFOR" target="_blank">catpage-LEWUPPLP.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/how-to-bank-fish-for-bass" target="_blank">how-to-bank-fish</a></td><td>Aftco Urban Backpack</td><td><a href="https://www.tacklewarehouse.com/Aftco_Urban_Angler_Backpack/descpage-AUB.html?=BFOR" target="_blank">descpage-AUB.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/how-to-choose-a-fish-finder" target="_blank">how-to-choose-a-fish-finder</a></td><td>Humminbird Helix 15 CHIRP G4</td><td><a href="https://www.tacklewarehouse.com/Humminbird_Helix_15_CHIRP_G4_Fishfinders/descpage-HHG415.html" target="_blank">descpage-HHG415.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/jigs-for-bass" target="_blank">jigs-for-bass</a></td><td>Lunkerhunt Mushroom Head Jig</td><td><a href="https://www.tacklewarehouse.com/Lunkerhunt_Weedless_Mushroom_Head_4pk/descpage-LWMH.html?=BFOR" target="_blank">descpage-LWMH.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/september-bass-fishing-guide-us-regions" target="_blank">september-guide</a></td><td>Z-Man CrossEyeZ Finesse Craw</td><td><a href="https://www.tacklewarehouse.com/Z-Man_David_Walkers_Crosseyez_Power_Finesse_Jig/descpage-ZMDWCP.html?=BFOR" target="_blank">descpage-ZMDWCP.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/september-bass-fishing-guide-us-regions" target="_blank">september-guide</a></td><td>Huk Tournament Jacket</td><td><a href="https://www.tacklewarehouse.com/Huk_Scale_Hooded_Jacket_Black/descpage-HSJ.html?=BFOR" target="_blank">descpage-HSJ.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td colspan="4" style="padding:16px 12px;background:#1a1a2e"><strong style="color:#f97316">top-5-texas-lakes-bass-fishing — 19 broken links on ONE page (<a href="https://bassforecast.com/top-5-texas-lakes-bass-fishing" target="_blank" style="color:#60a5fa">view article</a>)</strong></td></tr>
+<tr><td><a href="https://bassforecast.com/top-5-texas-lakes-bass-fishing" target="_blank">top-5-texas-lakes</a></td><td>Texas-Rigged Worm</td><td><a href="https://www.tacklewarehouse.com/Zoom_Trick_Worm_20pk/descpage-ZOOMW.html?=BFOR" target="_blank">descpage-ZOOMW.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>"</td><td>Buzzbait</td><td><a href="https://www.tacklewarehouse.com/Booyah_Buzz/descpage-BYBB.html?=BFOR" target="_blank">descpage-BYBB.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>"</td><td>Crankbait</td><td><a href="https://www.tacklewarehouse.com/Rapala_DT_Series_Crankbait/descpage-RDTS.html?=BFOR" target="_blank">descpage-RDTS.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>"</td><td>Jerkbait</td><td><a href="https://www.tacklewarehouse.com/Megabass_Vision_110/descpage-MV110.html?=BFOR" target="_blank">descpage-MV110.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>"</td><td>Swimbait</td><td><a href="https://www.tacklewarehouse.com/Baits_Paddle_Minnow/descpage-BPM.html?=BFOR" target="_blank">descpage-BPM.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>"</td><td>Deep Jig</td><td><a href="https://www.tacklewarehouse.com/Strike_King_Skipping_Jig/descpage-SKSJ.html?=BFOR" target="_blank">descpage-SKSJ.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>"</td><td>Drop Shot</td><td><a href="https://www.tacklewarehouse.com/Roboworm_Straight_Tail_Worm/descpage-RSTW.html?=BFOR" target="_blank">descpage-RSTW.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>"</td><td>Spinnerbait</td><td><a href="https://www.tacklewarehouse.com/War_Eagle_Spinnerbait/descpage-WES.html?=BFOR" target="_blank">descpage-WES.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>"</td><td>Flippin' Jig</td><td><a href="https://www.tacklewarehouse.com/Z-Man_Crosseyez_Flipping_Jig/descpage-ZMCEFJ.html?=BFOR" target="_blank">descpage-ZMCEFJ.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>"</td><td>Carolina Rig</td><td><a href="https://www.tacklewarehouse.com/Zoom_Lizards/descpage-ZL.html?=BFOR" target="_blank">descpage-ZL.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>"</td><td>Chatterbait</td><td><a href="https://www.tacklewarehouse.com/Z-Man_Crosseyez_Chatterbait/descpage-ZMCEE.html?=BFOR" target="_blank">descpage-ZMCEE.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>"</td><td>Football Jig</td><td><a href="https://www.tacklewarehouse.com/Strike_King_Tour_Grade_Football_Jig/descpage-SKTGFJ.html?=BFOR" target="_blank">descpage-SKTGFJ.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>"</td><td>Daiwa Fuego LT 2500</td><td><a href="https://www.tacklewarehouse.com/Daiwa_Fuego_LT_Spinning_Reel/descpage-DFLT.html?=BFOR" target="_blank">descpage-DFLT.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>"</td><td>Daiwa Tatula 100</td><td><a href="https://www.tacklewarehouse.com/Daiwa_Tatula_100_Casting_Reel/descpage-DT100.html?=BFOR" target="_blank">descpage-DT100.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>"</td><td>Lew's Mach 2 Combo</td><td><a href="https://www.tacklewarehouse.com/Lews_Mach_2_Spinning_Combo/descpage-LM2SC.html?=BFOR" target="_blank">descpage-LM2SC.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>"</td><td>Shimano Sahara 2500</td><td><a href="https://www.tacklewarehouse.com/Shimano_Sahara_FJ_Spinning_Reel/descpage-SSFJ.html?=BFOR" target="_blank">descpage-SSFJ.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>"</td><td>Huk Icon X Hoodie</td><td><a href="https://www.tacklewarehouse.com/Huk_Icon_X_Hoodie/descpage-HIXH.html?=BFOR" target="_blank">descpage-HIXH.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>"</td><td>AFTCO Reaper Jacket</td><td><a href="https://www.tacklewarehouse.com/AFTCO_Reaper_Softshell_Jacket/descpage-ARSSJ.html?=BFOR" target="_blank">descpage-ARSSJ.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>"</td><td>Pro Series Tackle Bag</td><td><a href="https://www.tacklewarehouse.com/TW_Pro_Series_Tackle_Bag/descpage-TWPTB.html?=BFOR" target="_blank">descpage-TWPTB.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 style="margin:24px 0 12px;color:#f8fafc">Shimano Fish Shop — 6 Broken (Store Appears Dead)</h3>
+<table>
+<thead><tr><th>Article</th><th>Product</th><th>Broken URL</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td><a href="https://bassforecast.com/bass-fishing-10-day-august-08-2025" target="_blank">10-day-august-08</a></td><td>Swagy DW (spinnerbaits)</td><td><a href="https://fishshop.shimano.com/collections/bass/products/swagy-dw" target="_blank">fishshop.shimano.com/.../swagy-dw</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>"</td><td>Yammy Fish (wacky rigs)</td><td><a href="https://fishshop.shimano.com/collections/bass/products/yammy-fish" target="_blank">fishshop.shimano.com/.../yammy-fish</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>"</td><td>TN Disk Knocker (rattlebaits)</td><td><a href="https://fishshop.shimano.com/products/tn-disk-knocker" target="_blank">fishshop.shimano.com/.../tn-disk-knocker</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>"</td><td>World Diver (jerkbaits)</td><td><a href="https://fishshop.shimano.com/collections/bass/products/world-diver" target="_blank">fishshop.shimano.com/.../world-diver</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/bass-fishing-10-day-september-04-2025" target="_blank">10-day-sept-04</a></td><td>Yammy Fish</td><td><a href="https://fishshop.shimano.com/collections/bass/products/yammy-fish" target="_blank">fishshop.shimano.com/.../yammy-fish</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>"</td><td>Macbeth Shallow (medium cranks)</td><td><a href="https://fishshop.shimano.com/collections/bass/products/macbeth-shallow" target="_blank">fishshop.shimano.com/.../macbeth-shallow</a></td><td><span class="badge badge-red">404</span></td></tr>
+</tbody>
+</table>
+
+<h3 style="margin:24px 0 12px;color:#f8fafc">Other Broken Links</h3>
+<table>
+<thead><tr><th>Article</th><th>Product</th><th>Broken URL</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td><a href="https://bassforecast.com/cold-weather-bass-fishing-buyers-guide-must-have-gear-for-smart-anglers" target="_blank">cold-weather-guide</a></td><td>Grundens Buoy X Anorak</td><td>Avantlink redirect &rarr; grundens.com (product removed)</td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>"</td><td>Grundies Mid Bottom (x2)</td><td><a href="https://grundens.com/collections/fishing-base-layers/products/grundies-mid-bottom" target="_blank">grundens.com/.../grundies-mid-bottom</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/how-to-fish-for-bass" target="_blank">how-to-fish-for-bass</a></td><td>External guide link</td><td><a href="https://fishnatics.com/how-to-fish-with-plastic-worms-the-ultimate-guide/" target="_blank">fishnatics.com (domain dead)</a></td><td><span class="badge badge-red">DNS FAIL</span></td></tr>
+<tr><td><a href="https://bassforecast.com/bass-fishing-patterns" target="_blank">bass-fishing-patterns</a></td><td>Premium features (internal)</td><td>https://bassforecast/premium-features</td><td><span class="badge badge-orange">Missing .com</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- TRACKING TAB -->
+<div class="panel" id="tab-tracking">
+<div class="callout warning">
+<div class="callout-title">175 affiliate links use ?=BFOR instead of ?from=BFOR</div>
+<p>The tracking parameter has no key name. This means Bass Forecast likely gets ZERO attribution credit on these clicks — even when the product page loads fine. <a href="https://bassforecast.com/best-topwater-lures-bass-fishing-guide" target="_blank">View source on this page</a> and search for "?=BFOR" to see it yourself.</p>
+</div>
+
+<h3 style="margin-bottom:12px;color:#f8fafc">Worst Offenders by Article</h3>
+<table>
+<thead><tr><th>Article (click to view source)</th><th>Malformed Links</th><th style="width:50%">Visual</th></tr></thead>
+<tbody>
+<tr><td><a href="https://bassforecast.com/best-topwater-lures-bass-fishing-guide" target="_blank">best-topwater-lures-bass-fishing-guide</a></td><td>39</td><td><div class="progress-bar"><div class="progress-fill" style="width:100%;background:#ef4444"></div></div></td></tr>
+<tr><td><a href="https://bassforecast.com/top-5-texas-lakes-bass-fishing" target="_blank">top-5-texas-lakes-bass-fishing</a></td><td>37</td><td><div class="progress-bar"><div class="progress-fill" style="width:95%;background:#ef4444"></div></div></td></tr>
+<tr><td><a href="https://bassforecast.com/september-bass-fishing-guide-us-regions" target="_blank">september-bass-fishing-guide</a></td><td>21</td><td><div class="progress-bar"><div class="progress-fill" style="width:54%;background:#f97316"></div></div></td></tr>
+<tr><td><a href="https://bassforecast.com/top-5-florida-lakes-bass-fishing" target="_blank">top-5-florida-lakes-bass-fishing</a></td><td>18</td><td><div class="progress-bar"><div class="progress-fill" style="width:46%;background:#f97316"></div></div></td></tr>
+<tr><td><a href="https://bassforecast.com/best-baitcasting-reels-for-bass-fishing" target="_blank">best-baitcasting-reels</a></td><td>11</td><td><div class="progress-bar"><div class="progress-fill" style="width:28%;background:#eab308"></div></div></td></tr>
+<tr><td><a href="https://bassforecast.com/jigs-for-bass" target="_blank">jigs-for-bass</a></td><td>10</td><td><div class="progress-bar"><div class="progress-fill" style="width:26%;background:#eab308"></div></div></td></tr>
+<tr><td><a href="https://bassforecast.com/spring-bass-fishing" target="_blank">spring-bass-fishing</a></td><td>6</td><td><div class="progress-bar"><div class="progress-fill" style="width:15%;background:#eab308"></div></div></td></tr>
+<tr><td><a href="https://bassforecast.com/umbrella-rig-bass-fishing-how-to-catch-big-largemouth" target="_blank">umbrella-rig-bass-fishing</a></td><td>6</td><td><div class="progress-bar"><div class="progress-fill" style="width:15%;background:#eab308"></div></div></td></tr>
+<tr><td><a href="https://bassforecast.com/cold-weather-bass-fishing-buyers-guide-must-have-gear-for-smart-anglers" target="_blank">cold-weather-buyers-guide</a></td><td>6</td><td><div class="progress-bar"><div class="progress-fill" style="width:15%;background:#eab308"></div></div></td></tr>
+<tr><td>+ 11 other articles</td><td>21 total</td><td><div class="progress-bar"><div class="progress-fill" style="width:54%;background:#475569"></div></div></td></tr>
+</tbody>
+</table>
+
+<div class="callout info" style="margin-top:24px">
+<div class="callout-title">What's wrong exactly?</div>
+<p><strong>Wrong:</strong> <code>tacklewarehouse.com/product.html?=BFOR</code> (no parameter name)<br>
+<strong>Correct:</strong> <code>tacklewarehouse.com/product.html?from=BFOR</code> (has "from" key)<br><br>
+Both appear on the same pages — meaning someone got it right sometimes and wrong other times. Some links also have double errors like <code>?=BFOR?=BFOR</code> or <code>?color=RCB?=BFOR</code> (double question mark).</p>
+</div>
+</div>
+
+<!-- STATES TAB -->
+<div class="panel" id="tab-states">
+<div class="callout warning">
+<div class="callout-title">1 out of 50 states has a landing page. Click any link below to verify.</div>
+</div>
+<div class="scroll-table">
+<table>
+<thead><tr><th>State</th><th>URL (click to test)</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>Alabama</td><td><a href="https://bassforecast.com/al-bass-fishing" target="_blank">bassforecast.com/al-bass-fishing</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>Alaska</td><td><a href="https://bassforecast.com/ak-bass-fishing" target="_blank">bassforecast.com/ak-bass-fishing</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>Arizona</td><td><a href="https://bassforecast.com/az-bass-fishing" target="_blank">bassforecast.com/az-bass-fishing</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>Arkansas</td><td><a href="https://bassforecast.com/ar-bass-fishing" target="_blank">bassforecast.com/ar-bass-fishing</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>California</td><td><a href="https://bassforecast.com/ca-bass-fishing" target="_blank">bassforecast.com/ca-bass-fishing</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>Florida</td><td><a href="https://bassforecast.com/fl-bass-fishing" target="_blank">bassforecast.com/fl-bass-fishing</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>Georgia</td><td><a href="https://bassforecast.com/ga-bass-fishing" target="_blank">bassforecast.com/ga-bass-fishing</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>Illinois</td><td><a href="https://bassforecast.com/il-bass-fishing" target="_blank">bassforecast.com/il-bass-fishing</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>Michigan</td><td><a href="https://bassforecast.com/mi-bass-fishing" target="_blank">bassforecast.com/mi-bass-fishing</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>Minnesota</td><td><a href="https://bassforecast.com/mn-bass-fishing" target="_blank">bassforecast.com/mn-bass-fishing</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>New York</td><td><a href="https://bassforecast.com/ny-bass-fishing" target="_blank">bassforecast.com/ny-bass-fishing</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>North Carolina</td><td><a href="https://bassforecast.com/nc-bass-fishing" target="_blank">bassforecast.com/nc-bass-fishing</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>Ohio</td><td><a href="https://bassforecast.com/oh-bass-fishing" target="_blank">bassforecast.com/oh-bass-fishing</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>Tennessee</td><td><a href="https://bassforecast.com/tn-bass-fishing" target="_blank">bassforecast.com/tn-bass-fishing</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr style="background:#132a1c"><td><strong>Texas</strong></td><td><a href="https://bassforecast.com/tx-bass-fishing" target="_blank" style="color:#86efac"><strong>bassforecast.com/tx-bass-fishing</strong></a></td><td><span class="badge badge-green">200 OK</span></td></tr>
+<tr><td>Virginia</td><td><a href="https://bassforecast.com/va-bass-fishing" target="_blank">bassforecast.com/va-bass-fishing</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td>Wisconsin</td><td><a href="https://bassforecast.com/wi-bass-fishing" target="_blank">bassforecast.com/wi-bass-fishing</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td colspan="3" style="color:#94a3b8;font-style:italic;padding:16px 12px">+ 33 more states — all 404. Full list of all 50 in Google Sheet.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<!-- LAKES TAB -->
+<div class="panel" id="tab-lakes">
+<div class="callout">
+<div class="callout-title">Zero lake pages exist on bassforecast.com</div>
+<p>Tested 18 URL patterns, searched Google index (6 queries), checked 5 subdomains, analyzed full sitemap (1,451 URLs). Not a single individual lake page exists under any naming convention.</p>
+</div>
+
+<h3 style="margin-bottom:12px;color:#f8fafc">URL Patterns Tested (All 404 — click to verify)</h3>
+<table>
+<thead><tr><th>URL Pattern</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td><a href="https://bassforecast.com/lake/lake-fork" target="_blank">bassforecast.com/lake/lake-fork</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/lakes/lake-fork" target="_blank">bassforecast.com/lakes/lake-fork</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/lake-fork" target="_blank">bassforecast.com/lake-fork</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/lake-fork-texas" target="_blank">bassforecast.com/lake-fork-texas</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/forecast/lake-fork" target="_blank">bassforecast.com/forecast/lake-fork</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/location/lake-fork" target="_blank">bassforecast.com/location/lake-fork</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/spots/lake-fork" target="_blank">bassforecast.com/spots/lake-fork</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/lake/guntersville" target="_blank">bassforecast.com/lake/guntersville</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/lake/okeechobee" target="_blank">bassforecast.com/lake/okeechobee</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/lake/table-rock" target="_blank">bassforecast.com/lake/table-rock</a></td><td><span class="badge badge-red">404</span></td></tr>
+</tbody>
+</table>
+
+<div class="callout info" style="margin-top:24px">
+<div class="callout-title">For comparison: LakeMonster.com has 17,747 lake pages</div>
+<p>LakeMonster uses one dynamic template (<code>/lake/{State}/{Lake-Name}</code>) to generate nearly 18,000 pages with real-time water temp, weather, fishing conditions, and satellite imagery. Bass Forecast has the data in the app — it just isn't on the web. With 85% organic traffic, this is the single biggest growth opportunity.</p>
+</div>
+</div>
+
+<!-- SEO TAB -->
+<div class="panel" id="tab-seo">
+<table>
+<thead><tr><th>#</th><th>Issue</th><th>Impact</th><th>Effort</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><strong>Homepage has no H1 tag</strong> — <a href="view-source:https://bassforecast.com" target="_blank">view source</a>, search for &lt;h1&gt;</td><td><span class="badge badge-red">High</span></td><td><span class="badge badge-green">5 min</span></td></tr>
+<tr><td>2</td><td><strong>Homepage has no structured data</strong> — zero JSON-LD schema markup</td><td><span class="badge badge-red">High</span></td><td><span class="badge badge-blue">1 hour</span></td></tr>
+<tr><td>3</td><td><strong>65 weekly outlooks with identical meta descriptions</strong> — duplicate content signal</td><td><span class="badge badge-red">High</span></td><td><span class="badge badge-green">Low</span></td></tr>
+<tr><td>4</td><td><strong>Only 1 state page (Texas)</strong> — 49 states missing</td><td><span class="badge badge-red">Very High</span></td><td><span class="badge badge-yellow">Medium</span></td></tr>
+<tr><td>5</td><td><strong>0 lake pages</strong> — biggest SEO gap</td><td><span class="badge badge-red">Very High</span></td><td><span class="badge badge-orange">High</span></td></tr>
+<tr><td>6</td><td><strong>test-landing and test-page in sitemap</strong></td><td><span class="badge badge-yellow">Low</span></td><td><span class="badge badge-green">5 min</span></td></tr>
+<tr><td>7</td><td><strong>Misspelled URLs</strong> — "octber" and "septemeber" in sitemap</td><td><span class="badge badge-yellow">Low</span></td><td><span class="badge badge-green">10 min</span></td></tr>
+<tr><td>8</td><td><strong>All pages use NewsArticle schema</strong> — wrong for evergreen guides</td><td><span class="badge badge-orange">Medium</span></td><td><span class="badge badge-blue">Medium</span></td></tr>
+<tr><td>9</td><td><strong>Same OG image on every page</strong> — all social shares identical</td><td><span class="badge badge-orange">Medium</span></td><td><span class="badge badge-blue">Medium</span></td></tr>
+<tr><td>10</td><td><strong>No Twitter Card meta tags</strong> — site-wide</td><td><span class="badge badge-orange">Medium</span></td><td><span class="badge badge-green">Low</span></td></tr>
+<tr><td>11</td><td><strong>30 duplicate URLs in sitemap</strong></td><td><span class="badge badge-yellow">Low</span></td><td><span class="badge badge-green">Low</span></td></tr>
+<tr><td>12</td><td><strong>robots.txt wide open</strong> — admin/API/login pages crawlable</td><td><span class="badge badge-yellow">Low</span></td><td><span class="badge badge-green">10 min</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="footer">
+Bass Forecast Site Audit — April 3, 2026 — Prepared by Bill Welch<br>
+All data from public sources. Every link verified live. 226 articles crawled.
+</div>
+
+</div>
+
+<script>
+function showTab(name){
+document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+document.getElementById('tab-'+name).classList.add('active');
+event.target.classList.add('active');
+}
+</script>
+</body>
+</html>

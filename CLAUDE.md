@@ -151,3 +151,43 @@ Bill wants to send Landon a progress report.
 - Current app DAU and session length
 - Current newsletter open and click rates
 - Current homepage conversion rate — before redesign
+
+## ANSWERED QUESTIONS
+*Move questions here when resolved. Include date and answer.*
+
+### From Public Research (2026-04-03)
+- **What affiliate networks?** Tackle Warehouse (direct, uses ?from=BFOR param), Avantlink (for Grundens), Amazon (amzn.to short links), Shimano Fish Shop (fishshop.shimano.com — appears dead)
+- **Corporate structure?** BassForecast, LLC (Arlington TX). RedSnake Enterprises, LLC (Dallas TX) listed as parent on Crunchbase but separate Apple developer accounts, different founders (Red Cochran/Snake Porter vs Mike Mehlmann/Mike Welsh). Relationship unclear — ask Landon.
+- **Who built the app?** Mutual Mobile (Austin TX, now Grid Dynamics). $400-600K budget. Started July 2019, launched ~April 2020. In-house dev is maintaining agency-built code.
+- **Mike Mehlmann status?** Still listed as Co-Founder & CEO everywhere. Landon is President/Co-Owner. Both appear active but unclear who runs day-to-day.
+
+---
+
+## WORK COMPLETED (Pre-Access Phase)
+
+### Research (docs/research/)
+- Company profile, product metrics, SEO analysis, press/media links
+- Lakemonster.com design audit (Landon's stated inspiration — 17,747 lake pages)
+- Technical SEO audit (homepage missing H1, 65 duplicate outlooks, wrong schema types)
+
+### Full Site Crawl — 226 Articles (docs/research/FULL-CRAWL-broken-links.md)
+- 41 broken affiliate/product links (404)
+- App download CTA (OneLink) dead on ALL 226 pages
+- 175 malformed tracking params (?=BFOR instead of ?from=BFOR)
+- 6 Shimano Fish Shop links dead
+- Worst page: top-5-texas-lakes-bass-fishing — 19 broken + 37 malformed
+
+### Verified Missing Pages (docs/research/VERIFIED-missing-pages.md)
+- Only 1 state page (Texas) out of 50 — all others 404
+- Zero lake pages under any URL pattern (18 patterns tested, Google index searched, 5 subdomains checked)
+
+### Deliverable for Landon
+Google Sheet: https://docs.google.com/spreadsheets/d/1PuPUmhFqhPKVTCvIZJWFQgWZe0bPn6njROk54nOt1wE/edit
+7 tabs: Summary, Broken Links, Malformed Tracking, Missing Affiliates, State Pages, Lake Pages, SEO Quick Wins
+
+### Remaining Pre-Access Tasks
+- Research lake page data sources (USGS, Army Corps, tournaments)
+- Build proposal/scope doc for next Landon call
+- Draft contract/SOW
+
+---
