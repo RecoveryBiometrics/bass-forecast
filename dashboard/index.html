@@ -64,12 +64,12 @@ a:hover{text-decoration:underline;color:#93bbfd}
 <!-- STAT CARDS -->
 <div class="stat-grid">
 <div class="stat-card red">
-<div class="stat-number red">41</div>
+<div class="stat-number red">35</div>
 <div class="stat-label">Broken Product Links (404)</div>
 </div>
-<div class="stat-card orange">
-<div class="stat-number orange">6</div>
-<div class="stat-label">Dead Shimano Fish Shop Links</div>
+<div class="stat-card green">
+<div class="stat-number green">100%</div>
+<div class="stat-label">Verified via curl + page source</div>
 </div>
 <div class="stat-card orange">
 <div class="stat-number orange">175</div>
@@ -92,12 +92,12 @@ a:hover{text-decoration:underline;color:#93bbfd}
 <!-- CRITICAL ALERT -->
 <div class="callout">
 <div class="callout-title">The traffic engine works. The monetization layer is broken.</div>
-<p>600-700K monthly visitors, 85% organic. But 41 product links go to dead pages, 175 affiliate clicks aren't being tracked, only 1 of 50 state pages exists, and zero lake pages exist while a competitor has 17,747. Same traffic, 3-5x more revenue — just by fixing what's already here.</p>
+<p>600-700K monthly visitors, 85% organic. But 35 product links go to dead pages, 175 affiliate clicks aren't being tracked, only 1 of 50 state pages exists, and zero lake pages exist while a competitor has 17,747. Same traffic, 3-5x more revenue — just by fixing what's already here.</p>
 </div>
 
 <!-- TABS -->
 <div class="tabs">
-<div class="tab active" onclick="showTab('broken')">Broken Links (41)</div>
+<div class="tab active" onclick="showTab('broken')">Broken Links (35)</div>
 <div class="tab" onclick="showTab('tracking')">Bad Tracking (175)</div>
 <div class="tab" onclick="showTab('states')">State Pages</div>
 <div class="tab" onclick="showTab('lakes')">Lake Pages</div>
@@ -107,69 +107,77 @@ a:hover{text-decoration:underline;color:#93bbfd}
 <!-- BROKEN LINKS TAB -->
 <div class="panel active" id="tab-broken">
 <div class="callout warning">
-<div class="callout-title">How to verify: Click any "Broken URL" link below. You'll see the 404 page yourself.</div>
+<div class="callout-title">How to verify every link below</div>
+<p>1. Click the article link to open it. 2. View source (Ctrl+U) and search for the URL. 3. Click the broken URL — you'll see the 404 page. Every URL below was extracted directly from the page HTML and verified via curl.</p>
 </div>
 
-<h3 style="margin-bottom:12px;color:#f8fafc">Tackle Warehouse — 30 Broken Product Links</h3>
+<h3 style="margin-bottom:12px;color:#f8fafc">Across Multiple Articles — 10 Broken TW Links</h3>
+<p style="color:#94a3b8;font-size:0.85rem;margin-bottom:12px">Each URL was found in the article's HTML source and returns HTTP 404 from Tackle Warehouse. A working TW link on the same pages confirms TW is not blocking requests.</p>
 <div class="scroll-table">
 <table>
-<thead><tr><th>Article</th><th>Product</th><th>Broken URL (click to verify)</th><th>Status</th></tr></thead>
+<thead><tr><th>Article (view source to find link)</th><th>Broken URL (click to see 404)</th><th>Status</th></tr></thead>
 <tbody>
-<tr><td><a href="https://bassforecast.com/best-baitcasting-reels-for-bass-fishing" target="_blank">best-baitcasting-reels</a></td><td>Abu Garcia Max X</td><td><a href="https://www.tacklewarehouse.com/Abu_Garcia_Max_X_Casting_Reel/descpage-AGMXX.html?=BFOR" target="_blank">descpage-AGMXX.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://bassforecast.com/best-baitcasting-reels-for-bass-fishing" target="_blank">best-baitcasting-reels</a></td><td>Abu Garcia Max 4</td><td><a href="https://www.tacklewarehouse.com/Abu_Garcia_Max_4_Casting_Reel/descpage-AGM4.html?from=BFOR" target="_blank">descpage-AGM4.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://bassforecast.com/best-baitcasting-reels-for-bass-fishing" target="_blank">best-baitcasting-reels</a></td><td>KastKing iReel 2</td><td><a href="https://www.tacklewarehouse.com/KastKing_iReel_2_IFC_Smart_Casting_Reel/descpage-KZSIRT.html?from=BFOR" target="_blank">descpage-KZSIRT.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://bassforecast.com/best-landing-nets-for-bass-fishing" target="_blank">best-landing-nets</a></td><td>Frabill Trophy Haul Bearclaw</td><td><a href="https://www.tacklewarehouse.com/Frabill_Trophy_Haul_Bearclaw_Net/descpage-FBC.html?from=BFOR" target="_blank">descpage-FBC.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://bassforecast.com/bass-fishing-in-the-fall" target="_blank">bass-fishing-in-the-fall</a></td><td>Lew's Category Page</td><td><a href="https://www.tacklewarehouse.com/catpage-LEWUPPLP.html?=BFOR" target="_blank">catpage-LEWUPPLP.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://bassforecast.com/how-to-bank-fish-for-bass" target="_blank">how-to-bank-fish</a></td><td>Aftco Urban Backpack</td><td><a href="https://www.tacklewarehouse.com/Aftco_Urban_Angler_Backpack/descpage-AUB.html?=BFOR" target="_blank">descpage-AUB.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://bassforecast.com/how-to-choose-a-fish-finder" target="_blank">how-to-choose-a-fish-finder</a></td><td>Humminbird Helix 15 CHIRP G4</td><td><a href="https://www.tacklewarehouse.com/Humminbird_Helix_15_CHIRP_G4_Fishfinders/descpage-HHG415.html" target="_blank">descpage-HHG415.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://bassforecast.com/jigs-for-bass" target="_blank">jigs-for-bass</a></td><td>Lunkerhunt Mushroom Head Jig</td><td><a href="https://www.tacklewarehouse.com/Lunkerhunt_Weedless_Mushroom_Head_4pk/descpage-LWMH.html?=BFOR" target="_blank">descpage-LWMH.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://bassforecast.com/september-bass-fishing-guide-us-regions" target="_blank">september-guide</a></td><td>Z-Man CrossEyeZ Finesse Craw</td><td><a href="https://www.tacklewarehouse.com/Z-Man_David_Walkers_Crosseyez_Power_Finesse_Jig/descpage-ZMDWCP.html?=BFOR" target="_blank">descpage-ZMDWCP.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://bassforecast.com/september-bass-fishing-guide-us-regions" target="_blank">september-guide</a></td><td>Huk Tournament Jacket</td><td><a href="https://www.tacklewarehouse.com/Huk_Scale_Hooded_Jacket_Black/descpage-HSJ.html?=BFOR" target="_blank">descpage-HSJ.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td colspan="4" style="padding:16px 12px;background:#1a1a2e"><strong style="color:#f97316">top-5-texas-lakes-bass-fishing — 19 broken links on ONE page (<a href="https://bassforecast.com/top-5-texas-lakes-bass-fishing" target="_blank" style="color:#60a5fa">view article</a>)</strong></td></tr>
-<tr><td><a href="https://bassforecast.com/top-5-texas-lakes-bass-fishing" target="_blank">top-5-texas-lakes</a></td><td>Texas-Rigged Worm</td><td><a href="https://www.tacklewarehouse.com/Zoom_Trick_Worm_20pk/descpage-ZOOMW.html?=BFOR" target="_blank">descpage-ZOOMW.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>"</td><td>Buzzbait</td><td><a href="https://www.tacklewarehouse.com/Booyah_Buzz/descpage-BYBB.html?=BFOR" target="_blank">descpage-BYBB.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>"</td><td>Crankbait</td><td><a href="https://www.tacklewarehouse.com/Rapala_DT_Series_Crankbait/descpage-RDTS.html?=BFOR" target="_blank">descpage-RDTS.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>"</td><td>Jerkbait</td><td><a href="https://www.tacklewarehouse.com/Megabass_Vision_110/descpage-MV110.html?=BFOR" target="_blank">descpage-MV110.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>"</td><td>Swimbait</td><td><a href="https://www.tacklewarehouse.com/Baits_Paddle_Minnow/descpage-BPM.html?=BFOR" target="_blank">descpage-BPM.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>"</td><td>Deep Jig</td><td><a href="https://www.tacklewarehouse.com/Strike_King_Skipping_Jig/descpage-SKSJ.html?=BFOR" target="_blank">descpage-SKSJ.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>"</td><td>Drop Shot</td><td><a href="https://www.tacklewarehouse.com/Roboworm_Straight_Tail_Worm/descpage-RSTW.html?=BFOR" target="_blank">descpage-RSTW.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>"</td><td>Spinnerbait</td><td><a href="https://www.tacklewarehouse.com/War_Eagle_Spinnerbait/descpage-WES.html?=BFOR" target="_blank">descpage-WES.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>"</td><td>Flippin' Jig</td><td><a href="https://www.tacklewarehouse.com/Z-Man_Crosseyez_Flipping_Jig/descpage-ZMCEFJ.html?=BFOR" target="_blank">descpage-ZMCEFJ.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>"</td><td>Carolina Rig</td><td><a href="https://www.tacklewarehouse.com/Zoom_Lizards/descpage-ZL.html?=BFOR" target="_blank">descpage-ZL.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>"</td><td>Chatterbait</td><td><a href="https://www.tacklewarehouse.com/Z-Man_Crosseyez_Chatterbait/descpage-ZMCEE.html?=BFOR" target="_blank">descpage-ZMCEE.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>"</td><td>Football Jig</td><td><a href="https://www.tacklewarehouse.com/Strike_King_Tour_Grade_Football_Jig/descpage-SKTGFJ.html?=BFOR" target="_blank">descpage-SKTGFJ.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>"</td><td>Daiwa Fuego LT 2500</td><td><a href="https://www.tacklewarehouse.com/Daiwa_Fuego_LT_Spinning_Reel/descpage-DFLT.html?=BFOR" target="_blank">descpage-DFLT.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>"</td><td>Daiwa Tatula 100</td><td><a href="https://www.tacklewarehouse.com/Daiwa_Tatula_100_Casting_Reel/descpage-DT100.html?=BFOR" target="_blank">descpage-DT100.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>"</td><td>Lew's Mach 2 Combo</td><td><a href="https://www.tacklewarehouse.com/Lews_Mach_2_Spinning_Combo/descpage-LM2SC.html?=BFOR" target="_blank">descpage-LM2SC.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>"</td><td>Shimano Sahara 2500</td><td><a href="https://www.tacklewarehouse.com/Shimano_Sahara_FJ_Spinning_Reel/descpage-SSFJ.html?=BFOR" target="_blank">descpage-SSFJ.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>"</td><td>Huk Icon X Hoodie</td><td><a href="https://www.tacklewarehouse.com/Huk_Icon_X_Hoodie/descpage-HIXH.html?=BFOR" target="_blank">descpage-HIXH.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>"</td><td>AFTCO Reaper Jacket</td><td><a href="https://www.tacklewarehouse.com/AFTCO_Reaper_Softshell_Jacket/descpage-ARSSJ.html?=BFOR" target="_blank">descpage-ARSSJ.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>"</td><td>Pro Series Tackle Bag</td><td><a href="https://www.tacklewarehouse.com/TW_Pro_Series_Tackle_Bag/descpage-TWPTB.html?=BFOR" target="_blank">descpage-TWPTB.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/best-baitcasting-reels-for-bass-fishing" target="_blank">best-baitcasting-reels-for-bass-fishing</a></td><td><a href="https://www.tacklewarehouse.com/Abu_Garcia_Max_X_Casting_Reel/descpage-AGMXX.html?=BFOR" target="_blank">Abu_Garcia_Max_X_Casting_Reel/descpage-AGMXX.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/best-baitcasting-reels-for-bass-fishing" target="_blank">best-baitcasting-reels-for-bass-fishing</a></td><td><a href="https://www.tacklewarehouse.com/Abu_Garcia_Max_4_Casting_Reel/descpage-AGM4.html?from=BFOR" target="_blank">Abu_Garcia_Max_4_Casting_Reel/descpage-AGM4.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/best-baitcasting-reels-for-bass-fishing" target="_blank">best-baitcasting-reels-for-bass-fishing</a></td><td><a href="https://www.tacklewarehouse.com/KastKing_iReel_2_IFC_Smart_Casting_Reel/descpage-KZSIRT.html?from=BFOR" target="_blank">KastKing_iReel_2_IFC_Smart_Casting_Reel/descpage-KZSIRT.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/best-landing-nets-for-bass-fishing" target="_blank">best-landing-nets-for-bass-fishing</a></td><td><a href="https://www.tacklewarehouse.com/Frabill_Trophy_Haul_Bearclaw_Net/descpage-FBC.html?from=BFOR" target="_blank">Frabill_Trophy_Haul_Bearclaw_Net/descpage-FBC.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/bass-fishing-in-the-fall" target="_blank">bass-fishing-in-the-fall</a></td><td><a href="https://www.tacklewarehouse.com/catpage-LEWUPPLP.html?=BFOR" target="_blank">catpage-LEWUPPLP.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/how-to-bank-fish-for-bass" target="_blank">how-to-bank-fish-for-bass</a></td><td><a href="https://www.tacklewarehouse.com/Aftco_Urban_Angler_Backpack/descpage-AUB.html?=BFOR" target="_blank">Aftco_Urban_Angler_Backpack/descpage-AUB.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/how-to-choose-a-fish-finder" target="_blank">how-to-choose-a-fish-finder</a></td><td><a href="https://www.tacklewarehouse.com/Humminbird_Helix_15_CHIRP_G4_Fishfinders/descpage-HHG415.html?=BFOR" target="_blank">Humminbird_Helix_15_CHIRP_G4_Fishfinders/descpage-HHG415.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/jigs-for-bass" target="_blank">jigs-for-bass</a></td><td><a href="https://www.tacklewarehouse.com/Lunkerhunt_Weedless_Mushroom_Head_4pk/descpage-LWMH.html?=BFOR" target="_blank">Lunkerhunt_Weedless_Mushroom_Head_4pk/descpage-LWMH.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/september-bass-fishing-guide-us-regions" target="_blank">september-bass-fishing-guide</a></td><td><a href="https://www.tacklewarehouse.com/Z-Man_David_Walkers_Crosseyez_Power_Finesse_Jig/descpage-ZMDWCP.html?=BFOR" target="_blank">Z-Man_Crosseyez_Power_Finesse_Jig/descpage-ZMDWCP.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/september-bass-fishing-guide-us-regions" target="_blank">september-bass-fishing-guide</a></td><td><a href="https://www.tacklewarehouse.com/Huk_Scale_Hooded_Jacket_Black/descpage-HSJ.html?=BFOR" target="_blank">Huk_Scale_Hooded_Jacket_Black/descpage-HSJ.html</a></td><td><span class="badge badge-red">404</span></td></tr>
 </tbody>
 </table>
 </div>
 
-<h3 style="margin:24px 0 12px;color:#f8fafc">Shimano Fish Shop — 6 Broken (Store Appears Dead)</h3>
+<h3 style="margin:24px 0 4px;color:#f8fafc">top-5-texas-lakes-bass-fishing — 19 broken on ONE page</h3>
+<p style="color:#94a3b8;font-size:0.85rem;margin-bottom:12px"><a href="https://bassforecast.com/top-5-texas-lakes-bass-fishing" target="_blank">Open the article</a>, then Ctrl+U to view source. Every URL below is in the HTML. 42 total TW links on this page — 19 return 404, 23 return 200.</p>
+<div class="scroll-table">
 <table>
-<thead><tr><th>Article</th><th>Product</th><th>Broken URL</th><th>Status</th></tr></thead>
+<thead><tr><th>Broken URL (click to see 404)</th><th>Status</th></tr></thead>
 <tbody>
-<tr><td><a href="https://bassforecast.com/bass-fishing-10-day-august-08-2025" target="_blank">10-day-august-08</a></td><td>Swagy DW (spinnerbaits)</td><td><a href="https://fishshop.shimano.com/collections/bass/products/swagy-dw" target="_blank">fishshop.shimano.com/.../swagy-dw</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>"</td><td>Yammy Fish (wacky rigs)</td><td><a href="https://fishshop.shimano.com/collections/bass/products/yammy-fish" target="_blank">fishshop.shimano.com/.../yammy-fish</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>"</td><td>TN Disk Knocker (rattlebaits)</td><td><a href="https://fishshop.shimano.com/products/tn-disk-knocker" target="_blank">fishshop.shimano.com/.../tn-disk-knocker</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>"</td><td>World Diver (jerkbaits)</td><td><a href="https://fishshop.shimano.com/collections/bass/products/world-diver" target="_blank">fishshop.shimano.com/.../world-diver</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://bassforecast.com/bass-fishing-10-day-september-04-2025" target="_blank">10-day-sept-04</a></td><td>Yammy Fish</td><td><a href="https://fishshop.shimano.com/collections/bass/products/yammy-fish" target="_blank">fishshop.shimano.com/.../yammy-fish</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>"</td><td>Macbeth Shallow (medium cranks)</td><td><a href="https://fishshop.shimano.com/collections/bass/products/macbeth-shallow" target="_blank">fishshop.shimano.com/.../macbeth-shallow</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/AFTCO_Reaper_Softshell_Jacket/descpage-ARSSJ.html?=BFOR" target="_blank">AFTCO_Reaper_Softshell_Jacket/descpage-ARSSJ.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/Berkley_PowerBait_Minnotator/descpage-BPM.html?=BFOR" target="_blank">Berkley_PowerBait_Minnotator/descpage-BPM.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/Booyah_Buzzbait/descpage-BYBB.html?=BFOR" target="_blank">Booyah_Buzzbait/descpage-BYBB.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/Daiwa_Fuego_LT_Spinning_Reels/descpage-DFLT.html?=BFOR" target="_blank">Daiwa_Fuego_LT_Spinning_Reels/descpage-DFLT.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/Daiwa_Tatula_100_Baitcasting_Reel/descpage-DT100.html?=BFOR" target="_blank">Daiwa_Tatula_100_Baitcasting_Reel/descpage-DT100.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/Huk_Icon_X_Hoodie/descpage-HIXH.html?=BFOR" target="_blank">Huk_Icon_X_Hoodie/descpage-HIXH.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/Lews_Mach_2_Spinning_Combos/descpage-LM2SC.html?=BFOR" target="_blank">Lews_Mach_2_Spinning_Combos/descpage-LM2SC.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/Megabass_Vision_110_Jerkbait/descpage-MV110.html?=BFOR" target="_blank">Megabass_Vision_110_Jerkbait/descpage-MV110.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/Rapala_DT_Series_Crankbaits/descpage-RDTS.html?=BFOR" target="_blank">Rapala_DT_Series_Crankbaits/descpage-RDTS.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/Roboworm_Straight_Tail_Worm_6_20pk/descpage-RSTW.html?=BFOR" target="_blank">Roboworm_Straight_Tail_Worm/descpage-RSTW.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/Shimano_Sahara_FJ_Spinning_Reels/descpage-SSFJ.html?=BFOR" target="_blank">Shimano_Sahara_FJ_Spinning_Reels/descpage-SSFJ.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/Strike_King_Structure_Jig/descpage-SKSJ.html?=BFOR" target="_blank">Strike_King_Structure_Jig/descpage-SKSJ.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/strike_king_tour_grade_football_jig/descpage-SKTGFJ.html?=BFOR" target="_blank">strike_king_tour_grade_football_jig/descpage-SKTGFJ.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/Tackle_Warehouse_Pro_Series_Tackle_Bag/descpage-TWPTB.html?=BFOR" target="_blank">Tackle_Warehouse_Pro_Series_Tackle_Bag/descpage-TWPTB.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/War_Eagle_Spinnerbaits/descpage-WES.html?=BFOR" target="_blank">War_Eagle_Spinnerbaits/descpage-WES.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/Z-Man_Chatterbait_Elite_Evo/descpage-ZMCEE.html?=BFOR" target="_blank">Z-Man_Chatterbait_Elite_Evo/descpage-ZMCEE.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/Z-Man_CrossEyeZ_Flipping_Jig/descpage-ZMCEFJ.html?=BFOR" target="_blank">Z-Man_CrossEyeZ_Flipping_Jig/descpage-ZMCEFJ.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/Zoom_Lizard_6_15pk/descpage-ZL.html?=BFOR" target="_blank">Zoom_Lizard_6_15pk/descpage-ZL.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/Zoom_Ol_Monster_105_Worm_9pk/descpage-ZOOMW.html?=BFOR" target="_blank">Zoom_Ol_Monster_105_Worm_9pk/descpage-ZOOMW.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 style="margin:24px 0 4px;color:#f8fafc">Shimano Fish Shop — 5 Broken</h3>
+<p style="color:#94a3b8;font-size:0.85rem;margin-bottom:12px">These links are inside the 10-day outlook articles in the bait recommendation sections. View source and search for "fishshop.shimano.com" to find them.</p>
+<table>
+<thead><tr><th>Article (view source to find link)</th><th>Broken URL (click to see 404)</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td><a href="https://bassforecast.com/bass-fishing-10-day-august-08-2025" target="_blank">10-day-august-08-2025</a></td><td><a href="https://fishshop.shimano.com/collections/bass/products/swagy-dw?utm_source=bassforecast&utm_medium=bait_selector&utm_campaign=bass_lures" target="_blank">fishshop.shimano.com/.../swagy-dw</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/bass-fishing-10-day-august-08-2025" target="_blank">10-day-august-08-2025</a></td><td><a href="https://fishshop.shimano.com/collections/bass/products/yammy-fish?utm_source=bassforecast&utm_medium=bait_selector&utm_campaign=bass_lures" target="_blank">fishshop.shimano.com/.../yammy-fish</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/bass-fishing-10-day-august-08-2025" target="_blank">10-day-august-08-2025</a></td><td><a href="https://fishshop.shimano.com/products/tn-disk-knocker?utm_source=bassforecast&utm_medium=bait_selector&utm_campaign=bass_lures" target="_blank">fishshop.shimano.com/.../tn-disk-knocker</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/bass-fishing-10-day-august-08-2025" target="_blank">10-day-august-08-2025</a></td><td><a href="https://fishshop.shimano.com/collections/bass/products/world-diver?utm_source=bassforecast&utm_medium=bait_selector&utm_campaign=bass_lures" target="_blank">fishshop.shimano.com/.../world-diver</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/bass-fishing-10-day-september-04-2025" target="_blank">10-day-september-04-2025</a></td><td><a href="https://fishshop.shimano.com/collections/bass/products/macbeth-shallow?utm_source=bassforecast&utm_medium=bait_selector&utm_campaign=bass_lures" target="_blank">fishshop.shimano.com/.../macbeth-shallow</a></td><td><span class="badge badge-red">404</span></td></tr>
 </tbody>
 </table>
 
-<h3 style="margin:24px 0 12px;color:#f8fafc">Other Broken Links</h3>
+<h3 style="margin:24px 0 4px;color:#f8fafc">Other</h3>
 <table>
-<thead><tr><th>Article</th><th>Product</th><th>Broken URL</th><th>Status</th></tr></thead>
+<thead><tr><th>Article</th><th>Broken URL</th><th>Status</th></tr></thead>
 <tbody>
-<tr><td><a href="https://bassforecast.com/cold-weather-bass-fishing-buyers-guide-must-have-gear-for-smart-anglers" target="_blank">cold-weather-guide</a></td><td>Grundens Buoy X Anorak</td><td>Avantlink redirect &rarr; grundens.com (product removed)</td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>"</td><td>Grundies Mid Bottom (x2)</td><td><a href="https://grundens.com/collections/fishing-base-layers/products/grundies-mid-bottom" target="_blank">grundens.com/.../grundies-mid-bottom</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://bassforecast.com/how-to-fish-for-bass" target="_blank">how-to-fish-for-bass</a></td><td>External guide link</td><td><a href="https://fishnatics.com/how-to-fish-with-plastic-worms-the-ultimate-guide/" target="_blank">fishnatics.com (domain dead)</a></td><td><span class="badge badge-red">DNS FAIL</span></td></tr>
-<tr><td><a href="https://bassforecast.com/bass-fishing-patterns" target="_blank">bass-fishing-patterns</a></td><td>Premium features (internal)</td><td>https://bassforecast/premium-features</td><td><span class="badge badge-orange">Missing .com</span></td></tr>
+<tr><td><a href="https://bassforecast.com/cold-weather-bass-fishing-buyers-guide-must-have-gear-for-smart-anglers" target="_blank">cold-weather-buyers-guide</a></td><td><a href="https://grundens.com/collections/fishing-base-layers/products/grundies-mid-bottom" target="_blank">grundens.com/.../grundies-mid-bottom</a></td><td><span class="badge badge-red">404</span></td></tr>
 </tbody>
 </table>
 </div>
