@@ -208,9 +208,25 @@ Both appear on the same pages — meaning someone got it right sometimes and wro
 
 <!-- STATES TAB -->
 <div class="panel" id="tab-states">
-<div class="callout warning">
-<div class="callout-title">1 out of 50 states has a landing page. Click any link below to verify.</div>
+<div class="callout">
+<div class="callout-title">1 out of 50 states has a landing page. Competitors own these searches.</div>
+<p>Every "[state] bass fishing" search is traffic Bass Forecast should be capturing. Instead, users land on Fishbrain, Wired2Fish, and state wildlife agency pages. The template already exists (Texas works) — it just hasn't been rolled out to the other 49 states.</p>
 </div>
+
+<h3 style="margin-bottom:12px;color:#f8fafc">Who's Ranking Instead of Bass Forecast</h3>
+<table style="margin-bottom:24px">
+<thead><tr><th>Search Query</th><th>Who Ranks</th><th>Bass Forecast Page</th></tr></thead>
+<tbody>
+<tr><td>"Florida bass fishing"</td><td>Fishbrain, FWC, Wired2Fish, local guides</td><td><a href="https://bassforecast.com/fl-bass-fishing" target="_blank" style="color:#ef4444">404 — doesn't exist</a></td></tr>
+<tr><td>"California bass fishing"</td><td>Fishbrain, CA DFW, Field & Stream</td><td><a href="https://bassforecast.com/ca-bass-fishing" target="_blank" style="color:#ef4444">404 — doesn't exist</a></td></tr>
+<tr><td>"Georgia bass fishing"</td><td>Fishbrain, GA DNR, local blogs</td><td><a href="https://bassforecast.com/ga-bass-fishing" target="_blank" style="color:#ef4444">404 — doesn't exist</a></td></tr>
+<tr><td>"Michigan bass fishing"</td><td>Fishbrain, MI DNR, Wired2Fish</td><td><a href="https://bassforecast.com/mi-bass-fishing" target="_blank" style="color:#ef4444">404 — doesn't exist</a></td></tr>
+<tr><td>"Tennessee bass fishing"</td><td>Fishbrain, TWRA, local guides</td><td><a href="https://bassforecast.com/tn-bass-fishing" target="_blank" style="color:#ef4444">404 — doesn't exist</a></td></tr>
+<tr style="background:#132a1c"><td>"Texas bass fishing"</td><td><strong style="color:#86efac">Bass Forecast ranks</strong></td><td><a href="https://bassforecast.com/tx-bass-fishing" target="_blank" style="color:#86efac">200 — page exists</a></td></tr>
+</tbody>
+</table>
+
+<h3 style="margin-bottom:12px;color:#f8fafc">All 50 States — Verified via curl (click any to test)</h3>
 <div class="scroll-table">
 <table>
 <thead><tr><th>State</th><th>URL (click to test)</th><th>Status</th></tr></thead>
@@ -241,9 +257,31 @@ Both appear on the same pages — meaning someone got it right sometimes and wro
 <!-- LAKES TAB -->
 <div class="panel" id="tab-lakes">
 <div class="callout">
-<div class="callout-title">Zero lake pages exist on bassforecast.com</div>
-<p>Tested 18 URL patterns, searched Google index (6 queries), checked 5 subdomains, analyzed full sitemap (1,451 URLs). Not a single individual lake page exists under any naming convention.</p>
+<div class="callout-title">Zero lake pages. Competitors have thousands.</div>
+<p>Every "Lake Fork bass fishing" or "Lake Guntersville fishing report" search is traffic going to competitors. Bass Forecast has the forecast data in the app — it just isn't on the web where Google can index it.</p>
 </div>
+
+<h3 style="margin-bottom:12px;color:#f8fafc">The Competitive Gap</h3>
+<table style="margin-bottom:24px">
+<thead><tr><th>Site</th><th>Lake Pages</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td><strong>Bass Forecast</strong></td><td><span class="badge badge-red" style="font-size:1rem">0</span></td><td><a href="https://bassforecast.com/lake/lake-fork" target="_blank" style="color:#ef4444">404 — nothing</a></td></tr>
+<tr><td><strong>LakeMonster.com</strong></td><td><span class="badge badge-green" style="font-size:1rem">17,747</span></td><td><a href="https://www.lakemonster.com/lake/Texas/Lake-Fork-194" target="_blank">Full dashboard — live water temp, forecast, satellite</a></td></tr>
+<tr><td><strong>Fishbrain</strong></td><td><span class="badge badge-green" style="font-size:1rem">Thousands</span></td><td>User-generated catch data per waterbody</td></tr>
+</tbody>
+</table>
+
+<h3 style="margin-bottom:12px;color:#f8fafc">Searches Bass Forecast Is Missing</h3>
+<table style="margin-bottom:24px">
+<thead><tr><th>Search Query</th><th>Who Ranks Instead</th><th>Bass Forecast Page</th></tr></thead>
+<tbody>
+<tr><td>"Lake Fork bass fishing"</td><td>LakeMonster, Fishbrain, TX Parks</td><td><a href="https://bassforecast.com/lake-fork" target="_blank" style="color:#ef4444">404</a></td></tr>
+<tr><td>"Lake Guntersville fishing report"</td><td>LakeMonster, Fishbrain, AL DCNR</td><td><a href="https://bassforecast.com/lake/guntersville" target="_blank" style="color:#ef4444">404</a></td></tr>
+<tr><td>"Lake Okeechobee bass fishing"</td><td>LakeMonster, Fishbrain, local guides</td><td><a href="https://bassforecast.com/lake/okeechobee" target="_blank" style="color:#ef4444">404</a></td></tr>
+<tr><td>"Table Rock Lake fishing"</td><td>LakeMonster, Fishbrain, MO Conservation</td><td><a href="https://bassforecast.com/lake/table-rock" target="_blank" style="color:#ef4444">404</a></td></tr>
+<tr><td>"Kentucky Lake bass fishing"</td><td>LakeMonster, Fishbrain, KY Fish & Wildlife</td><td><a href="https://bassforecast.com/lake/kentucky-lake" target="_blank" style="color:#ef4444">404</a></td></tr>
+</tbody>
+</table>
 
 <h3 style="margin-bottom:12px;color:#f8fafc">URL Patterns Tested (All 404 — click to verify)</h3>
 <table>
@@ -263,8 +301,8 @@ Both appear on the same pages — meaning someone got it right sometimes and wro
 </table>
 
 <div class="callout info" style="margin-top:24px">
-<div class="callout-title">For comparison: LakeMonster.com has 17,747 lake pages</div>
-<p>LakeMonster uses one dynamic template (<code>/lake/{State}/{Lake-Name}</code>) to generate nearly 18,000 pages with real-time water temp, weather, fishing conditions, and satellite imagery. Bass Forecast has the data in the app — it just isn't on the web. With 85% organic traffic, this is the single biggest growth opportunity.</p>
+<div class="callout-title">The opportunity</div>
+<p>Bass Forecast already has the forecast data in the app — users enter a location and get predictions. But none of that data is on the web where Google can index it. LakeMonster built 17,747 pages from one template. With 85% organic traffic already working, adding lake pages compounds directly into revenue. The data exists. The traffic engine works. The pages just need to be built.</p>
 </div>
 </div>
 
