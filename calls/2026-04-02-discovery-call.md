@@ -186,15 +186,7 @@ Framework exists. Content personalization to these cohorts does NOT exist yet. T
 
 ## OPEN QUESTIONS FROM THIS CALL
 
-- Who is the full time developer — name and direct contact
-- What affiliate networks are they on specifically
-- What is current affiliate revenue baseline
-- What analytics platforms — GA4 or Universal Analytics
-- What newsletter platform
-- Do they have a staging environment
-- Full org chart — who does what day to day
-- Content approval workflow — who signs off before publishing
-- What is homepage current conversion rate
+See canonical list in `CLAUDE.md` > OPEN QUESTIONS. All questions from this call have been added there.
 
 ---
 
