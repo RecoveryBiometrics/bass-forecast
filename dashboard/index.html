@@ -121,7 +121,7 @@ tr:hover td{background:rgba(255,255,255,0.02)}
 <div class="hero-card-items">
 <div class="hero-item"><span class="hero-dot yellow"></span>0 lake pages (competitor has 17,747)</div>
 <div class="hero-item"><span class="hero-dot yellow"></span>No guide, marina, or shop directories</div>
-<div class="hero-item"><span class="hero-dot yellow"></span>No lodging/camping affiliate revenue</div>
+<div class="hero-item"><span class="hero-dot yellow"></span>Anglers need 6+ sites to plan a trip to one lake</div>
 </div>
 </div>
 <div class="hero-card opportunity">
@@ -148,7 +148,7 @@ tr:hover td{background:rgba(255,255,255,0.02)}
 <div class="nav-item" onclick="showTab('states')">State Pages</div>
 <div class="nav-item" onclick="showTab('lakes')">Lake Pages</div>
 <div class="nav-item" onclick="showTab('seo')">SEO Issues</div>
-<div class="nav-item" onclick="showTab('revenue')">Revenue Opportunities</div>
+<div class="nav-item" onclick="showTab('revenue')">What Anglers Need</div>
 <div class="nav-item" onclick="showTab('plan')">90-Day Plan</div>
 <div class="nav-item demo" onclick="window.open('demo-lake-fork.html','_blank')">Lake Page Demo &#x2197;</div>
 </div>
@@ -369,57 +369,55 @@ Both appear on the same pages. Some links have double errors like <code>?=BFOR?=
 </div>
 </div>
 
-<!-- REVENUE OPPORTUNITIES -->
+<!-- WHAT ANGLERS NEED -->
 <div class="section" id="tab-revenue">
-<p class="section-intro">Untapped affiliate and directory revenue. Every lake page becomes a hub for commissions and listing fees.</p>
+<p class="section-intro">An angler searching "Lake Fork bass fishing" has a checklist in their head. Right now they need 6+ different websites to plan a trip. A Bass Forecast lake page answers every question in one place &mdash; and becomes the only page they need.</p>
 
 <div class="card">
-<div class="card-title">Affiliate Programs &mdash; Revenue on Lake Pages</div>
+<div class="card-title">Before They Go &mdash; Planning the Trip</div>
 <table>
-<thead><tr><th>Program</th><th>Commission</th><th>How It Works</th></tr></thead>
+<thead><tr><th>What the Angler Needs</th><th>What Bass Forecast Shows</th><th>Where the Data Comes From</th><th>Who Else Has This?</th></tr></thead>
 <tbody>
-<tr><td><strong>Booking.com</strong></td><td>25-40% of their commission</td><td>"Where to stay near [Lake]" via affiliate API</td></tr>
-<tr><td><strong>VRBO (Expedia)</strong></td><td>2-6% per booking</td><td>"Lake houses near [Lake]" affiliate deep links</td></tr>
-<tr><td><strong>Hipcamp</strong></td><td>Via AvantLink</td><td>"Camping near [Lake]" filtered by boat ramp proximity</td></tr>
-<tr><td><strong>Tackle Warehouse</strong></td><td>Existing partner</td><td>Bait Advisor recommendations per lake &mdash; fix tracking first</td></tr>
-<tr><td><strong>Omnia Fishing</strong></td><td>Existing partner</td><td>Lake-specific tackle recommendations</td></tr>
-<tr><td><strong>Amazon Associates</strong></td><td>1-10% by category</td><td>Coolers, kayaks, electronics, accessories</td></tr>
-<tr><td><strong>Bass Pro / Cabela's</strong></td><td>5-7% typical</td><td>Broader outdoor gear</td></tr>
+<tr><td><strong>"Is it worth going this weekend?"</strong></td><td>BFR rating + 10-day forecast</td><td>Proprietary (Bass Forecast app)</td><td><span class="card-badge green">Nobody</span></td></tr>
+<tr><td><strong>"What bait should I throw?"</strong></td><td>Top 5 baits for today's conditions</td><td>Bait Advisor (proprietary)</td><td><span class="card-badge green">Nobody</span></td></tr>
+<tr><td><strong>"What's the water temp and level?"</strong></td><td>Current conditions, weather, solunar</td><td>USGS + NOAA + AccuWeather</td><td>LakeMonster (data only)</td></tr>
+<tr><td><strong>"Has anyone caught anything here lately?"</strong></td><td>Tournament results + Lunker Club catches</td><td>Bassmaster API + user submissions</td><td>Fishbrain (catches only)</td></tr>
+<tr><td><strong>"I've never fished this lake &mdash; need a guide"</strong></td><td>Guide directory with reviews and booking</td><td>Scraped + self-listed + bookable</td><td>FishingBooker (separate site)</td></tr>
+<tr><td><strong>"Where do I stay?"</strong></td><td>Lakefront cabins, lodges, campgrounds</td><td>Booking.com / VRBO / Hipcamp / Recreation.gov</td><td>Scattered across 4+ sites</td></tr>
 </tbody>
 </table>
 </div>
 
 <div class="card">
-<div class="card-title">Directories &mdash; Free Listings That Upsell</div>
+<div class="card-title">Day Of &mdash; At the Lake</div>
 <table>
-<thead><tr><th>Directory</th><th>Free</th><th>Featured</th></tr></thead>
+<thead><tr><th>What the Angler Needs</th><th>What Bass Forecast Shows</th><th>Where the Data Comes From</th><th>Who Else Has This?</th></tr></thead>
 <tbody>
-<tr><td><strong>Fishing Guides</strong></td><td>Name, location, species</td><td>$99-299/month</td></tr>
-<tr><td><strong>Marinas</strong></td><td>Name, location, services</td><td>$99-199/month</td></tr>
-<tr><td><strong>Tackle Shops</strong></td><td>Name, location, hours</td><td>$99-299/month</td></tr>
-<tr><td><strong>Tournaments</strong></td><td>Date, lake, format</td><td>$99-299/month</td></tr>
-<tr><td><strong>Ice Locator</strong></td><td>Location, type</td><td>$49-199/month</td></tr>
-<tr><td><strong>Live Bait Tracker</strong></td><td>Shop, species available</td><td>$99-299/month</td></tr>
+<tr><td><strong>"Where do I launch my boat?"</strong></td><td>Boat ramps with lanes, surface, pricing</td><td>USACE + state agencies + OpenStreetMap</td><td>Scattered / no single source</td></tr>
+<tr><td><strong>"Where do I get live bait at 5 AM?"</strong></td><td>Bait shops with hours + what's in stock</td><td>Google Places + self-listed shops</td><td><span class="card-badge green">Nobody aggregates this</span></td></tr>
+<tr><td><strong>"I need ice before I go out"</strong></td><td>Ice locations near the lake</td><td>Built from scratch + crowdsourced</td><td><span class="card-badge green">No database exists anywhere</span></td></tr>
+<tr><td><strong>"Where's the nearest tackle shop?"</strong></td><td>Shops with distance, hours, inventory</td><td>Google Places + Yelp + self-listed</td><td>Google Maps (generic)</td></tr>
+<tr><td><strong>"Where do I gas up my boat?"</strong></td><td>Marina directory &mdash; fuel, slips, storage</td><td>Marinas.com + USACE + self-listed</td><td>Marinas.com (separate site)</td></tr>
+<tr><td><strong>"What time should I be on the water?"</strong></td><td>Peak feeding windows + solunar data</td><td>Proprietary solunar engine</td><td><span class="card-badge green">Nobody combines with BFR</span></td></tr>
 </tbody>
 </table>
 </div>
 
 <div class="card">
-<div class="card-title">Marketplace &mdash; Where It Goes Next</div>
+<div class="card-title">After the Trip &mdash; Keeping Them Coming Back</div>
 <table>
-<thead><tr><th>Feature</th><th>Revenue</th><th>Builds On</th></tr></thead>
+<thead><tr><th>What the Angler Needs</th><th>What Bass Forecast Shows</th><th>Where the Data Comes From</th><th>Who Else Has This?</th></tr></thead>
 <tbody>
-<tr><td><strong>Guide Booking</strong></td><td>10% commission</td><td>Guide directory</td></tr>
-<tr><td><strong>Lodge/Cabin Booking</strong></td><td>3-6% via VRBO/Booking.com</td><td>Lodging affiliates</td></tr>
-<tr><td><strong>Camping Reservations</strong></td><td>Hipcamp + Recreation.gov</td><td>Camping module</td></tr>
-<tr><td><strong>Newsletter Sponsorships</strong></td><td>$10,000-25,000/month</td><td>Segmented regional reports</td></tr>
+<tr><td><strong>"I caught a big one &mdash; want to log it"</strong></td><td>Lunker Club submission with photo + conditions</td><td>User-generated + auto-tagged (GPS, weather, BFR)</td><td>Fishbrain (catches only)</td></tr>
+<tr><td><strong>"When's the next tournament here?"</strong></td><td>Tournament calendar for this lake</td><td>Bassmaster API + TourneyX + manual</td><td>Scattered across org sites</td></tr>
+<tr><td><strong>"What's the weekly fishing report?"</strong></td><td>Lake-specific newsletter</td><td>BFR data + editorial + user reports</td><td><span class="card-badge green">Nobody does per-lake email</span></td></tr>
 </tbody>
 </table>
 </div>
 
 <div class="callout green">
-<div class="callout-title">What a single lake page looks like fully built</div>
-<p>Lake Fork, Texas: BFR rating, weather, lake level, tournament history, boat ramps, tackle shops, bait shops, guides, marinas, lodging, camping, ice, live bait. Every module is free data, affiliate revenue, or directory listing revenue. Multiply by 10,000 lakes. <strong><a href="demo-lake-fork.html" target="_blank">See the demo &rarr;</a></strong></p>
+<div class="card-title" style="color:#86efac;margin-bottom:8px">The moat: nobody else combines all of this</div>
+<p style="color:#94a3b8;font-size:0.85rem">LakeMonster has water data but no guides, no shops, no bait, no forecast. Fishbrain has catches but no conditions, no directories, no local services. Google Maps has locations but no fishing intelligence. Bass Forecast can be <strong>the only page an angler needs for any lake in the country</strong>. Each module is useful content that ranks in search AND serves the user. <strong><a href="demo-lake-fork.html" target="_blank">See what this looks like for Lake Fork &rarr;</a></strong></p>
 </div>
 </div>
 
