@@ -3,198 +3,248 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bass Forecast Site Audit — April 2026</title>
+<title>Bass Forecast — Site Audit & Growth Plan</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0f172a;color:#e2e8f0;line-height:1.6}
-.container{max-width:1200px;margin:0 auto;padding:20px}
-h1{font-size:2rem;font-weight:700;margin-bottom:4px;color:#f8fafc}
-.subtitle{color:#94a3b8;margin-bottom:30px;font-size:0.95rem}
-.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:36px}
-.stat-card{background:#1e293b;border-radius:12px;padding:20px;border:1px solid #334155}
-.stat-card.red{border-color:#ef4444}
-.stat-card.orange{border-color:#f97316}
-.stat-card.yellow{border-color:#eab308}
-.stat-card.green{border-color:#22c55e}
-.stat-number{font-size:2.5rem;font-weight:800;line-height:1}
-.stat-number.red{color:#ef4444}
-.stat-number.orange{color:#f97316}
-.stat-number.yellow{color:#eab308}
-.stat-number.green{color:#22c55e}
-.stat-label{color:#94a3b8;font-size:0.85rem;margin-top:6px}
-.tabs{display:flex;gap:4px;margin-bottom:0;flex-wrap:wrap}
-.tab{padding:10px 18px;background:#1e293b;border:1px solid #334155;border-bottom:none;border-radius:8px 8px 0 0;cursor:pointer;color:#94a3b8;font-size:0.85rem;font-weight:500;transition:all 0.2s}
-.tab:hover{color:#e2e8f0;background:#283548}
-.tab.active{background:#1e293b;color:#f8fafc;border-color:#475569;border-bottom:1px solid #1e293b;position:relative;z-index:1}
-.panel{display:none;background:#1e293b;border:1px solid #475569;border-radius:0 8px 8px 8px;padding:24px;margin-bottom:36px}
-.panel.active{display:block}
-table{width:100%;border-collapse:collapse;font-size:0.85rem}
-th{text-align:left;padding:10px 12px;background:#0f172a;color:#94a3b8;font-weight:600;text-transform:uppercase;font-size:0.75rem;letter-spacing:0.05em;position:sticky;top:0}
-td{padding:10px 12px;border-top:1px solid #334155}
-tr:hover td{background:#283548}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0a0f1a;color:#e2e8f0;line-height:1.6}
 a{color:#60a5fa;text-decoration:none}
 a:hover{text-decoration:underline;color:#93bbfd}
-.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600}
-.badge-red{background:#991b1b;color:#fca5a5}
-.badge-orange{background:#92400e;color:#fdba74}
-.badge-green{background:#166534;color:#86efac}
-.badge-blue{background:#1e3a5f;color:#93c5fd}
-.badge-yellow{background:#713f12;color:#fde047}
-.section-title{font-size:1.3rem;font-weight:700;margin:36px 0 16px;color:#f8fafc;display:flex;align-items:center;gap:10px}
-.section-title .icon{font-size:1.5rem}
-.callout{background:#1e293b;border-left:4px solid #ef4444;padding:16px 20px;border-radius:0 8px 8px 0;margin-bottom:24px}
-.callout.warning{border-color:#f97316}
-.callout.info{border-color:#3b82f6}
-.callout-title{font-weight:700;color:#f8fafc;margin-bottom:4px}
-.callout p{color:#94a3b8;font-size:0.9rem}
-.progress-bar{background:#334155;border-radius:99px;height:8px;overflow:hidden;margin-top:8px}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#0f172a 0%,#1a2744 50%,#0f172a 100%);padding:60px 0;border-bottom:1px solid #1e293b}
+.hero-inner{max-width:1100px;margin:0 auto;padding:0 24px}
+.hero h1{font-size:2.4rem;font-weight:800;color:#f8fafc;margin-bottom:6px;letter-spacing:-0.5px}
+.hero-sub{color:#64748b;font-size:1rem;margin-bottom:40px}
+.hero-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:40px}
+@media(max-width:768px){.hero-grid{grid-template-columns:1fr}}
+.hero-card{background:rgba(255,255,255,0.04);border:1px solid #1e293b;border-radius:16px;padding:28px 24px;position:relative;overflow:hidden}
+.hero-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.hero-card.problems::before{background:linear-gradient(90deg,#ef4444,#f97316)}
+.hero-card.gaps::before{background:linear-gradient(90deg,#eab308,#f97316)}
+.hero-card.opportunity::before{background:linear-gradient(90deg,#22c55e,#10b981)}
+.hero-card-label{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px}
+.hero-card.problems .hero-card-label{color:#ef4444}
+.hero-card.gaps .hero-card-label{color:#eab308}
+.hero-card.opportunity .hero-card-label{color:#22c55e}
+.hero-stat{font-size:2rem;font-weight:800;color:#f8fafc;line-height:1.1;margin-bottom:4px}
+.hero-detail{font-size:0.85rem;color:#64748b}
+.hero-card-items{margin-top:14px;display:flex;flex-direction:column;gap:8px}
+.hero-item{display:flex;align-items:center;gap:8px;font-size:0.85rem;color:#94a3b8}
+.hero-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.hero-dot.red{background:#ef4444}
+.hero-dot.orange{background:#f97316}
+.hero-dot.yellow{background:#eab308}
+.hero-dot.green{background:#22c55e}
+
+.hero-bottom{font-size:1.05rem;color:#94a3b8;max-width:800px;line-height:1.7}
+.hero-bottom strong{color:#f8fafc}
+
+/* NAV */
+.nav{background:#0f172a;border-bottom:1px solid #1e293b;position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.nav-inner::-webkit-scrollbar{display:none}
+.nav-item{padding:14px 20px;color:#64748b;font-size:0.85rem;font-weight:500;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:all 0.15s}
+.nav-item:hover{color:#e2e8f0}
+.nav-item.active{color:#f8fafc;border-bottom-color:#60a5fa}
+.nav-item.demo{color:#f97316;font-weight:600}
+.nav-item.demo:hover{color:#fb923c}
+
+/* SECTIONS */
+.section{display:none;max-width:1100px;margin:0 auto;padding:40px 24px}
+.section.active{display:block}
+.section-intro{font-size:0.95rem;color:#94a3b8;margin-bottom:28px;max-width:700px}
+
+/* CARDS */
+.card{background:#141b2d;border:1px solid #1e293b;border-radius:12px;padding:24px;margin-bottom:16px}
+.card-title{font-size:1rem;font-weight:700;color:#f8fafc;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.card-badge{font-size:0.7rem;font-weight:600;padding:3px 8px;border-radius:4px}
+.card-badge.red{background:#991b1b;color:#fca5a5}
+.card-badge.orange{background:#92400e;color:#fdba74}
+.card-badge.green{background:#166534;color:#86efac}
+.card-badge.blue{background:#1e3a5f;color:#93c5fd}
+.card-badge.yellow{background:#713f12;color:#fde047}
+
+/* TABLES */
+table{width:100%;border-collapse:collapse;font-size:0.85rem}
+th{text-align:left;padding:10px 14px;color:#64748b;font-weight:600;text-transform:uppercase;font-size:0.7rem;letter-spacing:0.08em;border-bottom:1px solid #1e293b}
+td{padding:10px 14px;border-bottom:1px solid rgba(30,41,59,0.5)}
+tr:hover td{background:rgba(255,255,255,0.02)}
+.scroll-table{max-height:480px;overflow-y:auto;border-radius:8px}
+
+/* PROGRESS */
+.progress-bar{background:#1e293b;border-radius:99px;height:6px;overflow:hidden;margin-top:6px}
 .progress-fill{height:100%;border-radius:99px}
-.scroll-table{max-height:500px;overflow-y:auto;border-radius:8px}
-.verify-link{font-size:0.75rem;color:#94a3b8;margin-left:8px}
-.verify-link:hover{color:#60a5fa}
-.footer{text-align:center;color:#475569;font-size:0.8rem;padding:40px 0 20px;border-top:1px solid #1e293b;margin-top:40px}
+
+/* CALLOUT */
+.callout{border-left:3px solid;padding:16px 20px;border-radius:0 10px 10px 0;margin-bottom:20px;background:rgba(255,255,255,0.02)}
+.callout.red{border-color:#ef4444}
+.callout.orange{border-color:#f97316}
+.callout.blue{border-color:#3b82f6}
+.callout.green{border-color:#22c55e}
+.callout-title{font-weight:700;color:#f8fafc;margin-bottom:4px;font-size:0.95rem}
+.callout p{color:#94a3b8;font-size:0.85rem}
+
+/* TWO COL */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:768px){.two-col{grid-template-columns:1fr}}
+
+/* VERIFIED STAMP */
+.verified{display:inline-flex;align-items:center;gap:4px;font-size:0.7rem;color:#22c55e;font-weight:600;background:rgba(34,197,94,0.1);padding:2px 8px;border-radius:4px}
+
+/* FOOTER */
+.footer{text-align:center;color:#334155;font-size:0.78rem;padding:48px 24px 24px;border-top:1px solid #1e293b;margin-top:48px;max-width:1100px;margin-left:auto;margin-right:auto}
 </style>
 </head>
 <body>
-<div class="container">
 
+<!-- HERO OVERVIEW -->
+<div class="hero">
+<div class="hero-inner">
 <h1>Bass Forecast Site Audit</h1>
-<p class="subtitle">Prepared by Bill Welch — April 3, 2026 — All 226 articles crawled, every link verified live — No internal access required</p>
+<p class="hero-sub">Prepared by Bill Welch &mdash; April 2026 &mdash; 226 articles crawled, every link verified</p>
 
-<!-- STAT CARDS -->
-<div class="stat-grid">
-<div class="stat-card red">
-<div class="stat-number red">35</div>
-<div class="stat-label">Broken Product Links (404)</div>
-</div>
-<div class="stat-card green">
-<div class="stat-number green">100%</div>
-<div class="stat-label">Verified via curl + page source</div>
-</div>
-<div class="stat-card orange">
-<div class="stat-number orange">175</div>
-<div class="stat-label">Untracked Affiliate Links</div>
-</div>
-<div class="stat-card yellow">
-<div class="stat-number yellow">1/50</div>
-<div class="stat-label">State Pages Built</div>
-</div>
-<div class="stat-card yellow">
-<div class="stat-number yellow">0</div>
-<div class="stat-label">Lake Pages (vs 17,747 on LakeMonster)</div>
-</div>
-<div class="stat-card green">
-<div class="stat-number green">226</div>
-<div class="stat-label">Articles Crawled (100%)</div>
+<div class="hero-grid">
+<div class="hero-card problems">
+<div class="hero-card-label">What's Broken</div>
+<div class="hero-stat">35 dead links</div>
+<div class="hero-detail">Product links sending users to 404 pages</div>
+<div class="hero-card-items">
+<div class="hero-item"><span class="hero-dot red"></span>175 affiliate links not tracking</div>
+<div class="hero-item"><span class="hero-dot red"></span>Worst page: 19 broken on one article</div>
+<div class="hero-item"><span class="hero-dot orange"></span>12 technical SEO issues found</div>
 </div>
 </div>
-
-<!-- CRITICAL ALERT -->
-<div class="callout">
-<div class="callout-title">The traffic engine works. The monetization layer is broken.</div>
-<p>600-700K monthly visitors, 85% organic. But 35 product links go to dead pages, 175 affiliate clicks aren't being tracked, only 1 of 50 state pages exists, and zero lake pages exist while a competitor has 17,747. Same traffic, 3-5x more revenue — just by fixing what's already here.</p>
+<div class="hero-card gaps">
+<div class="hero-card-label">What's Missing</div>
+<div class="hero-stat">49 of 50 states</div>
+<div class="hero-detail">Only Texas has a landing page</div>
+<div class="hero-card-items">
+<div class="hero-item"><span class="hero-dot yellow"></span>0 lake pages (competitor has 17,747)</div>
+<div class="hero-item"><span class="hero-dot yellow"></span>No guide, marina, or shop directories</div>
+<div class="hero-item"><span class="hero-dot yellow"></span>No lodging/camping affiliate revenue</div>
 </div>
-
-<!-- TABS -->
-<div class="tabs">
-<div class="tab active" onclick="showTab('broken')">Broken Links (35)</div>
-<div class="tab" onclick="showTab('tracking')">Bad Tracking (175)</div>
-<div class="tab" onclick="showTab('states')">State Pages</div>
-<div class="tab" onclick="showTab('lakes')">Lake Pages</div>
-<div class="tab" onclick="showTab('seo')">SEO Issues</div>
-<div class="tab" onclick="showTab('opportunity')">Revenue Opportunities</div>
-<div class="tab" onclick="showTab('plan')">90-Day Plan</div>
-<div class="tab" onclick="window.open('demo-lake-fork.html','_blank')">Lake Page Demo ↗</div>
+</div>
+<div class="hero-card opportunity">
+<div class="hero-card-label">The Opportunity</div>
+<div class="hero-stat">Same traffic, 3-5x revenue</div>
+<div class="hero-detail">The engine works. The monetization doesn't.</div>
+<div class="hero-card-items">
+<div class="hero-item"><span class="hero-dot green"></span>600-700K monthly visitors, 85% organic</div>
+<div class="hero-item"><span class="hero-dot green"></span>1.5M app users, 500K newsletter subs</div>
+<div class="hero-item"><span class="hero-dot green"></span>Fix leaks + build pages = compounding revenue</div>
+</div>
+</div>
 </div>
 
-<!-- BROKEN LINKS TAB -->
-<div class="panel active" id="tab-broken">
-<div class="callout warning">
-<div class="callout-title">How to verify every link below</div>
-<p>1. Click the article link to open it. 2. Right-click the page and select "View Page Source". 3. Press Cmd+F (Mac) or Ctrl+F (PC) and paste the URL to find it. 4. Click the broken URL — you'll see the 404 page yourself.</p>
+<p class="hero-bottom">Bass Forecast has proven organic traffic. <strong>What's broken is what happens after people arrive</strong> &mdash; affiliate links go to dead pages, tracking isn't working, and thousands of lake-specific searches go to competitors because the pages don't exist. Everything below is verified with raw HTTP requests. Click any link to see the 404 yourself.</p>
+</div>
 </div>
 
-<h3 style="margin-bottom:12px;color:#f8fafc">Across Multiple Articles — 10 Broken TW Links</h3>
-<p style="color:#94a3b8;font-size:0.85rem;margin-bottom:12px">Each URL was found in the article's HTML source and returns HTTP 404 from Tackle Warehouse. A working TW link on the same pages confirms TW is not blocking requests.</p>
+<!-- STICKY NAV -->
+<div class="nav">
+<div class="nav-inner">
+<div class="nav-item active" onclick="showTab('broken')">Broken Links</div>
+<div class="nav-item" onclick="showTab('tracking')">Bad Tracking</div>
+<div class="nav-item" onclick="showTab('states')">State Pages</div>
+<div class="nav-item" onclick="showTab('lakes')">Lake Pages</div>
+<div class="nav-item" onclick="showTab('seo')">SEO Issues</div>
+<div class="nav-item" onclick="showTab('revenue')">Revenue Opportunities</div>
+<div class="nav-item" onclick="showTab('plan')">90-Day Plan</div>
+<div class="nav-item demo" onclick="window.open('demo-lake-fork.html','_blank')">Lake Page Demo &#x2197;</div>
+</div>
+</div>
+
+<!-- BROKEN LINKS -->
+<div class="section active" id="tab-broken">
+<p class="section-intro">Every URL below was extracted from the article's HTML source and returns HTTP 404. <span class="verified">Verified via curl</span><br>To verify yourself: 1. Click the article link. 2. Right-click the page, select "View Page Source". 3. Press Cmd+F (Mac) or Ctrl+F (PC) and paste the URL. 4. Click the broken URL to see the 404.</p>
+
+<div class="card">
+<div class="card-title">Across Multiple Articles &mdash; 10 Broken TW Links <span class="card-badge red">404</span></div>
 <div class="scroll-table">
 <table>
-<thead><tr><th>Article (view source to find link)</th><th>Broken URL (click to see 404)</th><th>Status</th></tr></thead>
+<thead><tr><th>Article</th><th>Broken URL (click to see 404)</th><th>Status</th></tr></thead>
 <tbody>
-<tr><td><a href="https://bassforecast.com/best-baitcasting-reels-for-bass-fishing" target="_blank">best-baitcasting-reels-for-bass-fishing</a></td><td><a href="https://www.tacklewarehouse.com/Abu_Garcia_Max_X_Casting_Reel/descpage-AGMXX.html?=BFOR" target="_blank">Abu_Garcia_Max_X_Casting_Reel/descpage-AGMXX.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://bassforecast.com/best-baitcasting-reels-for-bass-fishing" target="_blank">best-baitcasting-reels-for-bass-fishing</a></td><td><a href="https://www.tacklewarehouse.com/Abu_Garcia_Max_4_Casting_Reel/descpage-AGM4.html?from=BFOR" target="_blank">Abu_Garcia_Max_4_Casting_Reel/descpage-AGM4.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://bassforecast.com/best-baitcasting-reels-for-bass-fishing" target="_blank">best-baitcasting-reels-for-bass-fishing</a></td><td><a href="https://www.tacklewarehouse.com/KastKing_iReel_2_IFC_Smart_Casting_Reel/descpage-KZSIRT.html?from=BFOR" target="_blank">KastKing_iReel_2_IFC_Smart_Casting_Reel/descpage-KZSIRT.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://bassforecast.com/best-landing-nets-for-bass-fishing" target="_blank">best-landing-nets-for-bass-fishing</a></td><td><a href="https://www.tacklewarehouse.com/Frabill_Trophy_Haul_Bearclaw_Net/descpage-FBC.html?from=BFOR" target="_blank">Frabill_Trophy_Haul_Bearclaw_Net/descpage-FBC.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://bassforecast.com/bass-fishing-in-the-fall" target="_blank">bass-fishing-in-the-fall</a></td><td><a href="https://www.tacklewarehouse.com/catpage-LEWUPPLP.html?=BFOR" target="_blank">catpage-LEWUPPLP.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://bassforecast.com/how-to-bank-fish-for-bass" target="_blank">how-to-bank-fish-for-bass</a></td><td><a href="https://www.tacklewarehouse.com/Aftco_Urban_Angler_Backpack/descpage-AUB.html?=BFOR" target="_blank">Aftco_Urban_Angler_Backpack/descpage-AUB.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://bassforecast.com/how-to-choose-a-fish-finder" target="_blank">how-to-choose-a-fish-finder</a></td><td><a href="https://www.tacklewarehouse.com/Humminbird_Helix_15_CHIRP_G4_Fishfinders/descpage-HHG415.html?=BFOR" target="_blank">Humminbird_Helix_15_CHIRP_G4_Fishfinders/descpage-HHG415.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://bassforecast.com/jigs-for-bass" target="_blank">jigs-for-bass</a></td><td><a href="https://www.tacklewarehouse.com/Lunkerhunt_Weedless_Mushroom_Head_4pk/descpage-LWMH.html?=BFOR" target="_blank">Lunkerhunt_Weedless_Mushroom_Head_4pk/descpage-LWMH.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://bassforecast.com/september-bass-fishing-guide-us-regions" target="_blank">september-bass-fishing-guide</a></td><td><a href="https://www.tacklewarehouse.com/Z-Man_David_Walkers_Crosseyez_Power_Finesse_Jig/descpage-ZMDWCP.html?=BFOR" target="_blank">Z-Man_Crosseyez_Power_Finesse_Jig/descpage-ZMDWCP.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://bassforecast.com/september-bass-fishing-guide-us-regions" target="_blank">september-bass-fishing-guide</a></td><td><a href="https://www.tacklewarehouse.com/Huk_Scale_Hooded_Jacket_Black/descpage-HSJ.html?=BFOR" target="_blank">Huk_Scale_Hooded_Jacket_Black/descpage-HSJ.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/best-baitcasting-reels-for-bass-fishing" target="_blank">best-baitcasting-reels</a></td><td><a href="https://www.tacklewarehouse.com/Abu_Garcia_Max_X_Casting_Reel/descpage-AGMXX.html?=BFOR" target="_blank">Abu_Garcia_Max_X / descpage-AGMXX</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/best-baitcasting-reels-for-bass-fishing" target="_blank">best-baitcasting-reels</a></td><td><a href="https://www.tacklewarehouse.com/Abu_Garcia_Max_4_Casting_Reel/descpage-AGM4.html?from=BFOR" target="_blank">Abu_Garcia_Max_4 / descpage-AGM4</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/best-baitcasting-reels-for-bass-fishing" target="_blank">best-baitcasting-reels</a></td><td><a href="https://www.tacklewarehouse.com/KastKing_iReel_2_IFC_Smart_Casting_Reel/descpage-KZSIRT.html?from=BFOR" target="_blank">KastKing_iReel_2 / descpage-KZSIRT</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/best-landing-nets-for-bass-fishing" target="_blank">best-landing-nets</a></td><td><a href="https://www.tacklewarehouse.com/Frabill_Trophy_Haul_Bearclaw_Net/descpage-FBC.html?from=BFOR" target="_blank">Frabill_Bearclaw / descpage-FBC</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/bass-fishing-in-the-fall" target="_blank">bass-fishing-in-the-fall</a></td><td><a href="https://www.tacklewarehouse.com/catpage-LEWUPPLP.html?=BFOR" target="_blank">catpage-LEWUPPLP</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/how-to-bank-fish-for-bass" target="_blank">how-to-bank-fish</a></td><td><a href="https://www.tacklewarehouse.com/Aftco_Urban_Angler_Backpack/descpage-AUB.html?=BFOR" target="_blank">Aftco_Urban_Backpack / descpage-AUB</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/how-to-choose-a-fish-finder" target="_blank">how-to-choose-a-fish-finder</a></td><td><a href="https://www.tacklewarehouse.com/Humminbird_Helix_15_CHIRP_G4_Fishfinders/descpage-HHG415.html?=BFOR" target="_blank">Humminbird_Helix_15 / descpage-HHG415</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/jigs-for-bass" target="_blank">jigs-for-bass</a></td><td><a href="https://www.tacklewarehouse.com/Lunkerhunt_Weedless_Mushroom_Head_4pk/descpage-LWMH.html?=BFOR" target="_blank">Lunkerhunt_Mushroom_Head / descpage-LWMH</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/september-bass-fishing-guide-us-regions" target="_blank">september-guide</a></td><td><a href="https://www.tacklewarehouse.com/Z-Man_David_Walkers_Crosseyez_Power_Finesse_Jig/descpage-ZMDWCP.html?=BFOR" target="_blank">Z-Man_Crosseyez / descpage-ZMDWCP</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/september-bass-fishing-guide-us-regions" target="_blank">september-guide</a></td><td><a href="https://www.tacklewarehouse.com/Huk_Scale_Hooded_Jacket_Black/descpage-HSJ.html?=BFOR" target="_blank">Huk_Jacket / descpage-HSJ</a></td><td><span class="card-badge red">404</span></td></tr>
 </tbody>
 </table>
 </div>
+</div>
 
-<h3 style="margin:24px 0 4px;color:#f8fafc">top-5-texas-lakes-bass-fishing — 19 broken on ONE page</h3>
-<p style="color:#94a3b8;font-size:0.85rem;margin-bottom:12px"><a href="https://bassforecast.com/top-5-texas-lakes-bass-fishing" target="_blank">Open the article</a>, then right-click &rarr; "View Page Source". Every URL below is in the HTML. 42 total TW links on this page — 19 return 404, 23 return 200.</p>
+<div class="card">
+<div class="card-title"><a href="https://bassforecast.com/top-5-texas-lakes-bass-fishing" target="_blank">top-5-texas-lakes-bass-fishing</a> &mdash; 19 broken on ONE page <span class="card-badge red">Worst Page</span></div>
+<p style="color:#64748b;font-size:0.8rem;margin-bottom:12px">42 total TW links on this page. 19 return 404, 23 return 200. Right-click &rarr; View Page Source &rarr; Cmd+F/Ctrl+F to find any URL.</p>
 <div class="scroll-table">
 <table>
 <thead><tr><th>Broken URL (click to see 404)</th><th>Status</th></tr></thead>
 <tbody>
-<tr><td><a href="https://www.tacklewarehouse.com/AFTCO_Reaper_Softshell_Jacket/descpage-ARSSJ.html?=BFOR" target="_blank">AFTCO_Reaper_Softshell_Jacket/descpage-ARSSJ.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://www.tacklewarehouse.com/Berkley_PowerBait_Minnotator/descpage-BPM.html?=BFOR" target="_blank">Berkley_PowerBait_Minnotator/descpage-BPM.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://www.tacklewarehouse.com/Booyah_Buzzbait/descpage-BYBB.html?=BFOR" target="_blank">Booyah_Buzzbait/descpage-BYBB.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://www.tacklewarehouse.com/Daiwa_Fuego_LT_Spinning_Reels/descpage-DFLT.html?=BFOR" target="_blank">Daiwa_Fuego_LT_Spinning_Reels/descpage-DFLT.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://www.tacklewarehouse.com/Daiwa_Tatula_100_Baitcasting_Reel/descpage-DT100.html?=BFOR" target="_blank">Daiwa_Tatula_100_Baitcasting_Reel/descpage-DT100.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://www.tacklewarehouse.com/Huk_Icon_X_Hoodie/descpage-HIXH.html?=BFOR" target="_blank">Huk_Icon_X_Hoodie/descpage-HIXH.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://www.tacklewarehouse.com/Lews_Mach_2_Spinning_Combos/descpage-LM2SC.html?=BFOR" target="_blank">Lews_Mach_2_Spinning_Combos/descpage-LM2SC.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://www.tacklewarehouse.com/Megabass_Vision_110_Jerkbait/descpage-MV110.html?=BFOR" target="_blank">Megabass_Vision_110_Jerkbait/descpage-MV110.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://www.tacklewarehouse.com/Rapala_DT_Series_Crankbaits/descpage-RDTS.html?=BFOR" target="_blank">Rapala_DT_Series_Crankbaits/descpage-RDTS.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://www.tacklewarehouse.com/Roboworm_Straight_Tail_Worm_6_20pk/descpage-RSTW.html?=BFOR" target="_blank">Roboworm_Straight_Tail_Worm/descpage-RSTW.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://www.tacklewarehouse.com/Shimano_Sahara_FJ_Spinning_Reels/descpage-SSFJ.html?=BFOR" target="_blank">Shimano_Sahara_FJ_Spinning_Reels/descpage-SSFJ.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://www.tacklewarehouse.com/Strike_King_Structure_Jig/descpage-SKSJ.html?=BFOR" target="_blank">Strike_King_Structure_Jig/descpage-SKSJ.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://www.tacklewarehouse.com/strike_king_tour_grade_football_jig/descpage-SKTGFJ.html?=BFOR" target="_blank">strike_king_tour_grade_football_jig/descpage-SKTGFJ.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://www.tacklewarehouse.com/Tackle_Warehouse_Pro_Series_Tackle_Bag/descpage-TWPTB.html?=BFOR" target="_blank">Tackle_Warehouse_Pro_Series_Tackle_Bag/descpage-TWPTB.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://www.tacklewarehouse.com/War_Eagle_Spinnerbaits/descpage-WES.html?=BFOR" target="_blank">War_Eagle_Spinnerbaits/descpage-WES.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://www.tacklewarehouse.com/Z-Man_Chatterbait_Elite_Evo/descpage-ZMCEE.html?=BFOR" target="_blank">Z-Man_Chatterbait_Elite_Evo/descpage-ZMCEE.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://www.tacklewarehouse.com/Z-Man_CrossEyeZ_Flipping_Jig/descpage-ZMCEFJ.html?=BFOR" target="_blank">Z-Man_CrossEyeZ_Flipping_Jig/descpage-ZMCEFJ.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://www.tacklewarehouse.com/Zoom_Lizard_6_15pk/descpage-ZL.html?=BFOR" target="_blank">Zoom_Lizard_6_15pk/descpage-ZL.html</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://www.tacklewarehouse.com/Zoom_Ol_Monster_105_Worm_9pk/descpage-ZOOMW.html?=BFOR" target="_blank">Zoom_Ol_Monster_105_Worm_9pk/descpage-ZOOMW.html</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/AFTCO_Reaper_Softshell_Jacket/descpage-ARSSJ.html?=BFOR" target="_blank">AFTCO_Reaper_Softshell_Jacket / descpage-ARSSJ</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/Berkley_PowerBait_Minnotator/descpage-BPM.html?=BFOR" target="_blank">Berkley_PowerBait_Minnotator / descpage-BPM</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/Booyah_Buzzbait/descpage-BYBB.html?=BFOR" target="_blank">Booyah_Buzzbait / descpage-BYBB</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/Daiwa_Fuego_LT_Spinning_Reels/descpage-DFLT.html?=BFOR" target="_blank">Daiwa_Fuego_LT / descpage-DFLT</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/Daiwa_Tatula_100_Baitcasting_Reel/descpage-DT100.html?=BFOR" target="_blank">Daiwa_Tatula_100 / descpage-DT100</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/Huk_Icon_X_Hoodie/descpage-HIXH.html?=BFOR" target="_blank">Huk_Icon_X_Hoodie / descpage-HIXH</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/Lews_Mach_2_Spinning_Combos/descpage-LM2SC.html?=BFOR" target="_blank">Lews_Mach_2_Combos / descpage-LM2SC</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/Megabass_Vision_110_Jerkbait/descpage-MV110.html?=BFOR" target="_blank">Megabass_Vision_110 / descpage-MV110</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/Rapala_DT_Series_Crankbaits/descpage-RDTS.html?=BFOR" target="_blank">Rapala_DT_Series / descpage-RDTS</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/Roboworm_Straight_Tail_Worm_6_20pk/descpage-RSTW.html?=BFOR" target="_blank">Roboworm_Straight_Tail / descpage-RSTW</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/Shimano_Sahara_FJ_Spinning_Reels/descpage-SSFJ.html?=BFOR" target="_blank">Shimano_Sahara_FJ / descpage-SSFJ</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/Strike_King_Structure_Jig/descpage-SKSJ.html?=BFOR" target="_blank">Strike_King_Structure_Jig / descpage-SKSJ</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/strike_king_tour_grade_football_jig/descpage-SKTGFJ.html?=BFOR" target="_blank">SK_Tour_Grade_Football / descpage-SKTGFJ</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/Tackle_Warehouse_Pro_Series_Tackle_Bag/descpage-TWPTB.html?=BFOR" target="_blank">TW_Pro_Series_Bag / descpage-TWPTB</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/War_Eagle_Spinnerbaits/descpage-WES.html?=BFOR" target="_blank">War_Eagle_Spinnerbaits / descpage-WES</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/Z-Man_Chatterbait_Elite_Evo/descpage-ZMCEE.html?=BFOR" target="_blank">Z-Man_Chatterbait_Elite / descpage-ZMCEE</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/Z-Man_CrossEyeZ_Flipping_Jig/descpage-ZMCEFJ.html?=BFOR" target="_blank">Z-Man_Flipping_Jig / descpage-ZMCEFJ</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/Zoom_Lizard_6_15pk/descpage-ZL.html?=BFOR" target="_blank">Zoom_Lizard / descpage-ZL</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td><a href="https://www.tacklewarehouse.com/Zoom_Ol_Monster_105_Worm_9pk/descpage-ZOOMW.html?=BFOR" target="_blank">Zoom_Ol_Monster / descpage-ZOOMW</a></td><td><span class="card-badge red">404</span></td></tr>
 </tbody>
 </table>
 </div>
+</div>
 
-<h3 style="margin:24px 0 4px;color:#f8fafc">Shimano Fish Shop — 5 Broken</h3>
-<p style="color:#94a3b8;font-size:0.85rem;margin-bottom:12px">These links are inside the 10-day outlook articles in the bait recommendation sections. View source and search for "fishshop.shimano.com" to find them.</p>
+<div class="two-col">
+<div class="card">
+<div class="card-title">Shimano Fish Shop &mdash; 5 Broken <span class="card-badge red">404</span></div>
+<p style="color:#64748b;font-size:0.8rem;margin-bottom:10px">Inside 10-day outlook bait recommendation sections. View source, search "fishshop.shimano.com".</p>
 <table>
-<thead><tr><th>Article (view source to find link)</th><th>Broken URL (click to see 404)</th><th>Status</th></tr></thead>
+<thead><tr><th>Article</th><th>Product</th></tr></thead>
 <tbody>
-<tr><td><a href="https://bassforecast.com/bass-fishing-10-day-august-08-2025" target="_blank">10-day-august-08-2025</a></td><td><a href="https://fishshop.shimano.com/collections/bass/products/swagy-dw?utm_source=bassforecast&utm_medium=bait_selector&utm_campaign=bass_lures" target="_blank">fishshop.shimano.com/.../swagy-dw</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://bassforecast.com/bass-fishing-10-day-august-08-2025" target="_blank">10-day-august-08-2025</a></td><td><a href="https://fishshop.shimano.com/collections/bass/products/yammy-fish?utm_source=bassforecast&utm_medium=bait_selector&utm_campaign=bass_lures" target="_blank">fishshop.shimano.com/.../yammy-fish</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://bassforecast.com/bass-fishing-10-day-august-08-2025" target="_blank">10-day-august-08-2025</a></td><td><a href="https://fishshop.shimano.com/products/tn-disk-knocker?utm_source=bassforecast&utm_medium=bait_selector&utm_campaign=bass_lures" target="_blank">fishshop.shimano.com/.../tn-disk-knocker</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://bassforecast.com/bass-fishing-10-day-august-08-2025" target="_blank">10-day-august-08-2025</a></td><td><a href="https://fishshop.shimano.com/collections/bass/products/world-diver?utm_source=bassforecast&utm_medium=bait_selector&utm_campaign=bass_lures" target="_blank">fishshop.shimano.com/.../world-diver</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://bassforecast.com/bass-fishing-10-day-september-04-2025" target="_blank">10-day-september-04-2025</a></td><td><a href="https://fishshop.shimano.com/collections/bass/products/macbeth-shallow?utm_source=bassforecast&utm_medium=bait_selector&utm_campaign=bass_lures" target="_blank">fishshop.shimano.com/.../macbeth-shallow</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/bass-fishing-10-day-august-08-2025" target="_blank">10-day aug 08</a></td><td><a href="https://fishshop.shimano.com/collections/bass/products/swagy-dw?utm_source=bassforecast&utm_medium=bait_selector&utm_campaign=bass_lures" target="_blank">Swagy DW</a></td></tr>
+<tr><td>"</td><td><a href="https://fishshop.shimano.com/collections/bass/products/yammy-fish?utm_source=bassforecast&utm_medium=bait_selector&utm_campaign=bass_lures" target="_blank">Yammy Fish</a></td></tr>
+<tr><td>"</td><td><a href="https://fishshop.shimano.com/products/tn-disk-knocker?utm_source=bassforecast&utm_medium=bait_selector&utm_campaign=bass_lures" target="_blank">TN Disk Knocker</a></td></tr>
+<tr><td>"</td><td><a href="https://fishshop.shimano.com/collections/bass/products/world-diver?utm_source=bassforecast&utm_medium=bait_selector&utm_campaign=bass_lures" target="_blank">World Diver</a></td></tr>
+<tr><td><a href="https://bassforecast.com/bass-fishing-10-day-september-04-2025" target="_blank">10-day sep 04</a></td><td><a href="https://fishshop.shimano.com/collections/bass/products/macbeth-shallow?utm_source=bassforecast&utm_medium=bait_selector&utm_campaign=bass_lures" target="_blank">Macbeth Shallow</a></td></tr>
 </tbody>
 </table>
-
-<h3 style="margin:24px 0 4px;color:#f8fafc">Other</h3>
+</div>
+<div class="card">
+<div class="card-title">Other Broken <span class="card-badge red">404</span></div>
 <table>
-<thead><tr><th>Article</th><th>Broken URL</th><th>Status</th></tr></thead>
+<thead><tr><th>Article</th><th>URL</th></tr></thead>
 <tbody>
-<tr><td><a href="https://bassforecast.com/cold-weather-bass-fishing-buyers-guide-must-have-gear-for-smart-anglers" target="_blank">cold-weather-buyers-guide</a></td><td><a href="https://grundens.com/collections/fishing-base-layers/products/grundies-mid-bottom" target="_blank">grundens.com/.../grundies-mid-bottom</a></td><td><span class="badge badge-red">404</span></td></tr>
+<tr><td><a href="https://bassforecast.com/cold-weather-bass-fishing-buyers-guide-must-have-gear-for-smart-anglers" target="_blank">cold-weather-guide</a></td><td><a href="https://grundens.com/collections/fishing-base-layers/products/grundies-mid-bottom" target="_blank">grundens.com / grundies-mid-bottom</a></td></tr>
 </tbody>
 </table>
 </div>
-
-<!-- TRACKING TAB -->
-<div class="panel" id="tab-tracking">
-<div class="callout warning">
-<div class="callout-title">175 affiliate links use ?=BFOR instead of ?from=BFOR</div>
-<p>The tracking parameter has no key name. This means Bass Forecast likely gets ZERO attribution credit on these clicks — even when the product page loads fine. <a href="https://bassforecast.com/best-topwater-lures-bass-fishing-guide" target="_blank">View source on this page</a> and search for "?=BFOR" to see it yourself.</p>
+</div>
 </div>
 
-<h3 style="margin-bottom:12px;color:#f8fafc">Worst Offenders by Article</h3>
+<!-- BAD TRACKING -->
+<div class="section" id="tab-tracking">
+<p class="section-intro">175 Tackle Warehouse links use <code>?=BFOR</code> instead of <code>?from=BFOR</code>. The parameter has no key name, so Bass Forecast likely gets zero attribution credit on these clicks. <a href="https://bassforecast.com/best-topwater-lures-bass-fishing-guide" target="_blank">View source on this page</a> and search "?=BFOR" to see it yourself.</p>
+
+<div class="card">
+<div class="card-title">Worst Offenders by Article</div>
 <table>
-<thead><tr><th>Article (click to view source)</th><th>Malformed Links</th><th style="width:50%">Visual</th></tr></thead>
+<thead><tr><th>Article (click to view source)</th><th>Malformed Links</th><th style="width:40%"></th></tr></thead>
 <tbody>
 <tr><td><a href="https://bassforecast.com/best-topwater-lures-bass-fishing-guide" target="_blank">best-topwater-lures-bass-fishing-guide</a></td><td>39</td><td><div class="progress-bar"><div class="progress-fill" style="width:100%;background:#ef4444"></div></div></td></tr>
 <tr><td><a href="https://bassforecast.com/top-5-texas-lakes-bass-fishing" target="_blank">top-5-texas-lakes-bass-fishing</a></td><td>37</td><td><div class="progress-bar"><div class="progress-fill" style="width:95%;background:#ef4444"></div></div></td></tr>
@@ -202,89 +252,83 @@ a:hover{text-decoration:underline;color:#93bbfd}
 <tr><td><a href="https://bassforecast.com/top-5-florida-lakes-bass-fishing" target="_blank">top-5-florida-lakes-bass-fishing</a></td><td>18</td><td><div class="progress-bar"><div class="progress-fill" style="width:46%;background:#f97316"></div></div></td></tr>
 <tr><td><a href="https://bassforecast.com/best-baitcasting-reels-for-bass-fishing" target="_blank">best-baitcasting-reels</a></td><td>11</td><td><div class="progress-bar"><div class="progress-fill" style="width:28%;background:#eab308"></div></div></td></tr>
 <tr><td><a href="https://bassforecast.com/jigs-for-bass" target="_blank">jigs-for-bass</a></td><td>10</td><td><div class="progress-bar"><div class="progress-fill" style="width:26%;background:#eab308"></div></div></td></tr>
-<tr><td><a href="https://bassforecast.com/spring-bass-fishing" target="_blank">spring-bass-fishing</a></td><td>6</td><td><div class="progress-bar"><div class="progress-fill" style="width:15%;background:#eab308"></div></div></td></tr>
-<tr><td><a href="https://bassforecast.com/umbrella-rig-bass-fishing-how-to-catch-big-largemouth" target="_blank">umbrella-rig-bass-fishing</a></td><td>6</td><td><div class="progress-bar"><div class="progress-fill" style="width:15%;background:#eab308"></div></div></td></tr>
-<tr><td><a href="https://bassforecast.com/cold-weather-bass-fishing-buyers-guide-must-have-gear-for-smart-anglers" target="_blank">cold-weather-buyers-guide</a></td><td>6</td><td><div class="progress-bar"><div class="progress-fill" style="width:15%;background:#eab308"></div></div></td></tr>
-<tr><td>+ 11 other articles</td><td>21 total</td><td><div class="progress-bar"><div class="progress-fill" style="width:54%;background:#475569"></div></div></td></tr>
+<tr><td>+ 14 other articles</td><td>39 total</td><td><div class="progress-bar"><div class="progress-fill" style="width:100%;background:#334155"></div></div></td></tr>
 </tbody>
 </table>
+</div>
 
-<div class="callout info" style="margin-top:24px">
-<div class="callout-title">What's wrong exactly?</div>
+<div class="callout blue">
+<div class="callout-title">What's wrong exactly</div>
 <p><strong>Wrong:</strong> <code>tacklewarehouse.com/product.html?=BFOR</code> (no parameter name)<br>
-<strong>Correct:</strong> <code>tacklewarehouse.com/product.html?from=BFOR</code> (has "from" key)<br><br>
-Both appear on the same pages — meaning someone got it right sometimes and wrong other times. Some links also have double errors like <code>?=BFOR?=BFOR</code> or <code>?color=RCB?=BFOR</code> (double question mark).</p>
+<strong>Correct:</strong> <code>tacklewarehouse.com/product.html?from=BFOR</code> (has "from" key)<br>
+Both appear on the same pages. Some links have double errors like <code>?=BFOR?=BFOR</code> or <code>?color=RCB?=BFOR</code>.</p>
 </div>
 </div>
 
-<!-- STATES TAB -->
-<div class="panel" id="tab-states">
-<div class="callout">
-<div class="callout-title">1 out of 50 states has a landing page. Competitors own these searches.</div>
-<p>Every "[state] bass fishing" search is traffic Bass Forecast should be capturing. Instead, users land on Fishbrain, Wired2Fish, and state wildlife agency pages. The template already exists (Texas works) — it just hasn't been rolled out to the other 49 states.</p>
-</div>
+<!-- STATE PAGES -->
+<div class="section" id="tab-states">
+<p class="section-intro">1 out of 50 states has a landing page. Every "[state] bass fishing" search is traffic going to Fishbrain, Wired2Fish, and state wildlife agencies instead of Bass Forecast. <span class="verified">All 50 verified via curl</span></p>
 
-<h3 style="margin-bottom:12px;color:#f8fafc">Who's Ranking Instead of Bass Forecast</h3>
-<table style="margin-bottom:24px">
-<thead><tr><th>Search Query</th><th>Who Ranks</th><th>Bass Forecast Page</th></tr></thead>
+<div class="card">
+<div class="card-title">Who's Ranking Instead of Bass Forecast</div>
+<table>
+<thead><tr><th>Search Query</th><th>Who Ranks</th><th>Bass Forecast</th></tr></thead>
 <tbody>
-<tr><td>"Florida bass fishing"</td><td>Fishbrain, FWC, Wired2Fish, local guides</td><td><a href="https://bassforecast.com/fl-bass-fishing" target="_blank" style="color:#ef4444">404 — doesn't exist</a></td></tr>
-<tr><td>"California bass fishing"</td><td>Fishbrain, CA DFW, Field & Stream</td><td><a href="https://bassforecast.com/ca-bass-fishing" target="_blank" style="color:#ef4444">404 — doesn't exist</a></td></tr>
-<tr><td>"Georgia bass fishing"</td><td>Fishbrain, GA DNR, local blogs</td><td><a href="https://bassforecast.com/ga-bass-fishing" target="_blank" style="color:#ef4444">404 — doesn't exist</a></td></tr>
-<tr><td>"Michigan bass fishing"</td><td>Fishbrain, MI DNR, Wired2Fish</td><td><a href="https://bassforecast.com/mi-bass-fishing" target="_blank" style="color:#ef4444">404 — doesn't exist</a></td></tr>
-<tr><td>"Tennessee bass fishing"</td><td>Fishbrain, TWRA, local guides</td><td><a href="https://bassforecast.com/tn-bass-fishing" target="_blank" style="color:#ef4444">404 — doesn't exist</a></td></tr>
-<tr style="background:#132a1c"><td>"Texas bass fishing"</td><td><strong style="color:#86efac">Bass Forecast ranks</strong></td><td><a href="https://bassforecast.com/tx-bass-fishing" target="_blank" style="color:#86efac">200 — page exists</a></td></tr>
+<tr><td>"Florida bass fishing"</td><td>Fishbrain, FWC, Wired2Fish</td><td><a href="https://bassforecast.com/fl-bass-fishing" target="_blank" style="color:#ef4444">404</a></td></tr>
+<tr><td>"California bass fishing"</td><td>Fishbrain, CA DFW, Field & Stream</td><td><a href="https://bassforecast.com/ca-bass-fishing" target="_blank" style="color:#ef4444">404</a></td></tr>
+<tr><td>"Georgia bass fishing"</td><td>Fishbrain, GA DNR, local blogs</td><td><a href="https://bassforecast.com/ga-bass-fishing" target="_blank" style="color:#ef4444">404</a></td></tr>
+<tr><td>"Michigan bass fishing"</td><td>Fishbrain, MI DNR, Wired2Fish</td><td><a href="https://bassforecast.com/mi-bass-fishing" target="_blank" style="color:#ef4444">404</a></td></tr>
+<tr><td>"Tennessee bass fishing"</td><td>Fishbrain, TWRA, local guides</td><td><a href="https://bassforecast.com/tn-bass-fishing" target="_blank" style="color:#ef4444">404</a></td></tr>
+<tr style="background:rgba(34,197,94,0.05)"><td>"Texas bass fishing"</td><td style="color:#22c55e"><strong>Bass Forecast ranks</strong></td><td><a href="https://bassforecast.com/tx-bass-fishing" target="_blank" style="color:#22c55e">200 OK</a></td></tr>
 </tbody>
 </table>
+</div>
 
-<h3 style="margin-bottom:12px;color:#f8fafc">All 50 States — Verified via curl (click any to test)</h3>
+<div class="card">
+<div class="card-title">Sample of 50 &mdash; Click any to verify</div>
 <div class="scroll-table">
 <table>
-<thead><tr><th>State</th><th>URL (click to test)</th><th>Status</th></tr></thead>
+<thead><tr><th>State</th><th>URL</th><th>Status</th></tr></thead>
 <tbody>
-<tr><td>Alabama</td><td><a href="https://bassforecast.com/al-bass-fishing" target="_blank">bassforecast.com/al-bass-fishing</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>Alaska</td><td><a href="https://bassforecast.com/ak-bass-fishing" target="_blank">bassforecast.com/ak-bass-fishing</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>Arizona</td><td><a href="https://bassforecast.com/az-bass-fishing" target="_blank">bassforecast.com/az-bass-fishing</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>Arkansas</td><td><a href="https://bassforecast.com/ar-bass-fishing" target="_blank">bassforecast.com/ar-bass-fishing</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>California</td><td><a href="https://bassforecast.com/ca-bass-fishing" target="_blank">bassforecast.com/ca-bass-fishing</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>Florida</td><td><a href="https://bassforecast.com/fl-bass-fishing" target="_blank">bassforecast.com/fl-bass-fishing</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>Georgia</td><td><a href="https://bassforecast.com/ga-bass-fishing" target="_blank">bassforecast.com/ga-bass-fishing</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>Illinois</td><td><a href="https://bassforecast.com/il-bass-fishing" target="_blank">bassforecast.com/il-bass-fishing</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>Michigan</td><td><a href="https://bassforecast.com/mi-bass-fishing" target="_blank">bassforecast.com/mi-bass-fishing</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>Minnesota</td><td><a href="https://bassforecast.com/mn-bass-fishing" target="_blank">bassforecast.com/mn-bass-fishing</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>New York</td><td><a href="https://bassforecast.com/ny-bass-fishing" target="_blank">bassforecast.com/ny-bass-fishing</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>North Carolina</td><td><a href="https://bassforecast.com/nc-bass-fishing" target="_blank">bassforecast.com/nc-bass-fishing</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>Ohio</td><td><a href="https://bassforecast.com/oh-bass-fishing" target="_blank">bassforecast.com/oh-bass-fishing</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>Tennessee</td><td><a href="https://bassforecast.com/tn-bass-fishing" target="_blank">bassforecast.com/tn-bass-fishing</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr style="background:#132a1c"><td><strong>Texas</strong></td><td><a href="https://bassforecast.com/tx-bass-fishing" target="_blank" style="color:#86efac"><strong>bassforecast.com/tx-bass-fishing</strong></a></td><td><span class="badge badge-green">200 OK</span></td></tr>
-<tr><td>Virginia</td><td><a href="https://bassforecast.com/va-bass-fishing" target="_blank">bassforecast.com/va-bass-fishing</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td>Wisconsin</td><td><a href="https://bassforecast.com/wi-bass-fishing" target="_blank">bassforecast.com/wi-bass-fishing</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td colspan="3" style="color:#94a3b8;font-style:italic;padding:16px 12px">+ 33 more states — all 404. Full list of all 50 in Google Sheet.</td></tr>
+<tr><td>Alabama</td><td><a href="https://bassforecast.com/al-bass-fishing" target="_blank">bassforecast.com/al-bass-fishing</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td>Arkansas</td><td><a href="https://bassforecast.com/ar-bass-fishing" target="_blank">bassforecast.com/ar-bass-fishing</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td>California</td><td><a href="https://bassforecast.com/ca-bass-fishing" target="_blank">bassforecast.com/ca-bass-fishing</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td>Florida</td><td><a href="https://bassforecast.com/fl-bass-fishing" target="_blank">bassforecast.com/fl-bass-fishing</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td>Georgia</td><td><a href="https://bassforecast.com/ga-bass-fishing" target="_blank">bassforecast.com/ga-bass-fishing</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td>Michigan</td><td><a href="https://bassforecast.com/mi-bass-fishing" target="_blank">bassforecast.com/mi-bass-fishing</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td>New York</td><td><a href="https://bassforecast.com/ny-bass-fishing" target="_blank">bassforecast.com/ny-bass-fishing</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td>North Carolina</td><td><a href="https://bassforecast.com/nc-bass-fishing" target="_blank">bassforecast.com/nc-bass-fishing</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td>Ohio</td><td><a href="https://bassforecast.com/oh-bass-fishing" target="_blank">bassforecast.com/oh-bass-fishing</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td>Tennessee</td><td><a href="https://bassforecast.com/tn-bass-fishing" target="_blank">bassforecast.com/tn-bass-fishing</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr style="background:rgba(34,197,94,0.05)"><td><strong>Texas</strong></td><td><a href="https://bassforecast.com/tx-bass-fishing" target="_blank" style="color:#22c55e"><strong>bassforecast.com/tx-bass-fishing</strong></a></td><td><span class="card-badge green">200</span></td></tr>
+<tr><td>Virginia</td><td><a href="https://bassforecast.com/va-bass-fishing" target="_blank">bassforecast.com/va-bass-fishing</a></td><td><span class="card-badge red">404</span></td></tr>
+<tr><td colspan="3" style="color:#64748b;font-style:italic">+ 38 more states &mdash; all 404. Full list in Google Sheet.</td></tr>
 </tbody>
 </table>
 </div>
 </div>
-
-<!-- LAKES TAB -->
-<div class="panel" id="tab-lakes">
-<div class="callout">
-<div class="callout-title">Zero lake pages. Competitors have thousands.</div>
-<p>Every "Lake Fork bass fishing" or "Lake Guntersville fishing report" search is traffic going to competitors. Bass Forecast has the forecast data in the app — it just isn't on the web where Google can index it.</p>
 </div>
 
-<h3 style="margin-bottom:12px;color:#f8fafc">The Competitive Gap</h3>
-<table style="margin-bottom:24px">
+<!-- LAKE PAGES -->
+<div class="section" id="tab-lakes">
+<p class="section-intro">Zero lake pages exist on bassforecast.com. Tested 18 URL patterns, searched Google index, analyzed full sitemap. Every lake-specific search goes to competitors.</p>
+
+<div class="card">
+<div class="card-title">The Competitive Gap</div>
+<table>
 <thead><tr><th>Site</th><th>Lake Pages</th><th>Example</th></tr></thead>
 <tbody>
-<tr><td><strong>Bass Forecast</strong></td><td><span class="badge badge-red" style="font-size:1rem">0</span></td><td><a href="https://bassforecast.com/lake/lake-fork" target="_blank" style="color:#ef4444">404 — nothing</a></td></tr>
-<tr><td><strong>LakeMonster.com</strong></td><td><span class="badge badge-green" style="font-size:1rem">17,747</span></td><td><a href="https://www.lakemonster.com/lake/Texas/Lake-Fork-194" target="_blank">Full dashboard — live water temp, forecast, satellite</a></td></tr>
-<tr><td><strong>Fishbrain</strong></td><td><span class="badge badge-green" style="font-size:1rem">Thousands</span></td><td>User-generated catch data per waterbody</td></tr>
+<tr><td><strong>Bass Forecast</strong></td><td><span class="card-badge red" style="font-size:0.9rem">0</span></td><td><a href="https://bassforecast.com/lake/lake-fork" target="_blank" style="color:#ef4444">404</a></td></tr>
+<tr><td><strong>LakeMonster.com</strong></td><td><span class="card-badge green" style="font-size:0.9rem">17,747</span></td><td><a href="https://www.lakemonster.com/lake/Texas/Lake-Fork-194" target="_blank">Full dashboard</a></td></tr>
+<tr><td><strong>Fishbrain</strong></td><td><span class="card-badge green" style="font-size:0.9rem">Thousands</span></td><td>User-generated catch data per waterbody</td></tr>
 </tbody>
 </table>
+</div>
 
-<h3 style="margin-bottom:12px;color:#f8fafc">Searches Bass Forecast Is Missing</h3>
-<table style="margin-bottom:24px">
-<thead><tr><th>Search Query</th><th>Who Ranks Instead</th><th>Bass Forecast Page</th></tr></thead>
+<div class="card">
+<div class="card-title">Searches Going to Competitors</div>
+<table>
+<thead><tr><th>Search</th><th>Who Ranks</th><th>Bass Forecast</th></tr></thead>
 <tbody>
 <tr><td>"Lake Fork bass fishing"</td><td>LakeMonster, Fishbrain, TX Parks</td><td><a href="https://bassforecast.com/lake-fork" target="_blank" style="color:#ef4444">404</a></td></tr>
 <tr><td>"Lake Guntersville fishing report"</td><td>LakeMonster, Fishbrain, AL DCNR</td><td><a href="https://bassforecast.com/lake/guntersville" target="_blank" style="color:#ef4444">404</a></td></tr>
@@ -293,209 +337,189 @@ Both appear on the same pages — meaning someone got it right sometimes and wro
 <tr><td>"Kentucky Lake bass fishing"</td><td>LakeMonster, Fishbrain, KY Fish & Wildlife</td><td><a href="https://bassforecast.com/lake/kentucky-lake" target="_blank" style="color:#ef4444">404</a></td></tr>
 </tbody>
 </table>
+</div>
 
-<h3 style="margin-bottom:12px;color:#f8fafc">URL Patterns Tested (All 404 — click to verify)</h3>
-<table>
-<thead><tr><th>URL Pattern</th><th>Status</th></tr></thead>
-<tbody>
-<tr><td><a href="https://bassforecast.com/lake/lake-fork" target="_blank">bassforecast.com/lake/lake-fork</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://bassforecast.com/lakes/lake-fork" target="_blank">bassforecast.com/lakes/lake-fork</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://bassforecast.com/lake-fork" target="_blank">bassforecast.com/lake-fork</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://bassforecast.com/lake-fork-texas" target="_blank">bassforecast.com/lake-fork-texas</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://bassforecast.com/forecast/lake-fork" target="_blank">bassforecast.com/forecast/lake-fork</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://bassforecast.com/location/lake-fork" target="_blank">bassforecast.com/location/lake-fork</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://bassforecast.com/spots/lake-fork" target="_blank">bassforecast.com/spots/lake-fork</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://bassforecast.com/lake/guntersville" target="_blank">bassforecast.com/lake/guntersville</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://bassforecast.com/lake/okeechobee" target="_blank">bassforecast.com/lake/okeechobee</a></td><td><span class="badge badge-red">404</span></td></tr>
-<tr><td><a href="https://bassforecast.com/lake/table-rock" target="_blank">bassforecast.com/lake/table-rock</a></td><td><span class="badge badge-red">404</span></td></tr>
-</tbody>
-</table>
-
-<div class="callout info" style="margin-top:24px">
+<div class="callout green">
 <div class="callout-title">The opportunity</div>
-<p>Bass Forecast already has the forecast data in the app — users enter a location and get predictions. But none of that data is on the web where Google can index it. LakeMonster built 17,747 pages from one template. With 85% organic traffic already working, adding lake pages compounds directly into revenue. The data exists. The traffic engine works. The pages just need to be built.</p>
+<p>Bass Forecast has the forecast data in the app &mdash; users enter a location and get predictions. But none of it is on the web where Google can index it. LakeMonster built 17,747 pages from one template. The data exists. The traffic engine works. The pages just need to be built. <strong><a href="demo-lake-fork.html" target="_blank">See the Lake Fork demo page &rarr;</a></strong></p>
 </div>
 </div>
 
-<!-- SEO TAB -->
-<div class="panel" id="tab-seo">
+<!-- SEO -->
+<div class="section" id="tab-seo">
+<p class="section-intro">Technical SEO issues found on bassforecast.com. Sorted by impact.</p>
+<div class="card">
 <table>
 <thead><tr><th>#</th><th>Issue</th><th>Impact</th></tr></thead>
 <tbody>
-<tr><td>1</td><td><strong>Homepage has no H1 tag</strong> — <a href="https://bassforecast.com" target="_blank">view source</a>, search for &lt;h1&gt;</td><td><span class="badge badge-red">High</span></td></tr>
-<tr><td>2</td><td><strong>Homepage has no structured data</strong> — zero JSON-LD schema markup</td><td><span class="badge badge-red">High</span></td></tr>
-<tr><td>3</td><td><strong>65 weekly outlooks with identical meta descriptions</strong> — duplicate content signal</td><td><span class="badge badge-red">High</span></td></tr>
-<tr><td>4</td><td><strong>Only 1 state page (Texas)</strong> — 49 states missing</td><td><span class="badge badge-red">Very High</span></td></tr>
-<tr><td>5</td><td><strong>0 lake pages</strong> — biggest SEO gap</td><td><span class="badge badge-red">Very High</span></td></tr>
-<tr><td>6</td><td><strong>test-landing and test-page in sitemap</strong></td><td><span class="badge badge-yellow">Low</span></td></tr>
-<tr><td>7</td><td><strong>Misspelled URLs</strong> — "octber" and "septemeber" in sitemap</td><td><span class="badge badge-yellow">Low</span></td></tr>
-<tr><td>8</td><td><strong>All pages use NewsArticle schema</strong> — wrong for evergreen guides</td><td><span class="badge badge-orange">Medium</span></td></tr>
-<tr><td>9</td><td><strong>Same OG image on every page</strong> — all social shares identical</td><td><span class="badge badge-orange">Medium</span></td></tr>
-<tr><td>10</td><td><strong>No Twitter Card meta tags</strong> — site-wide</td><td><span class="badge badge-orange">Medium</span></td></tr>
-<tr><td>11</td><td><strong>30 duplicate URLs in sitemap</strong></td><td><span class="badge badge-yellow">Low</span></td></tr>
-<tr><td>12</td><td><strong>robots.txt wide open</strong> — admin/API/login pages crawlable</td><td><span class="badge badge-yellow">Low</span></td></tr>
+<tr><td>1</td><td><strong>Homepage has no H1 tag</strong></td><td><span class="card-badge red">High</span></td></tr>
+<tr><td>2</td><td><strong>Homepage has no structured data</strong> &mdash; zero JSON-LD</td><td><span class="card-badge red">High</span></td></tr>
+<tr><td>3</td><td><strong>65 weekly outlooks with identical meta descriptions</strong></td><td><span class="card-badge red">High</span></td></tr>
+<tr><td>4</td><td><strong>Only 1 state page (Texas)</strong> &mdash; 49 missing</td><td><span class="card-badge red">Very High</span></td></tr>
+<tr><td>5</td><td><strong>0 lake pages</strong> &mdash; biggest SEO gap</td><td><span class="card-badge red">Very High</span></td></tr>
+<tr><td>6</td><td><strong>test-landing and test-page in sitemap</strong></td><td><span class="card-badge yellow">Low</span></td></tr>
+<tr><td>7</td><td><strong>Misspelled URLs</strong> &mdash; "octber" and "septemeber"</td><td><span class="card-badge yellow">Low</span></td></tr>
+<tr><td>8</td><td><strong>All pages use NewsArticle schema</strong> &mdash; wrong for evergreen</td><td><span class="card-badge orange">Medium</span></td></tr>
+<tr><td>9</td><td><strong>Same OG image on every page</strong></td><td><span class="card-badge orange">Medium</span></td></tr>
+<tr><td>10</td><td><strong>No Twitter Card meta tags</strong></td><td><span class="card-badge orange">Medium</span></td></tr>
+<tr><td>11</td><td><strong>30 duplicate URLs in sitemap</strong></td><td><span class="card-badge yellow">Low</span></td></tr>
+<tr><td>12</td><td><strong>robots.txt wide open</strong> &mdash; admin/API crawlable</td><td><span class="card-badge yellow">Low</span></td></tr>
 </tbody>
 </table>
 </div>
-
-<!-- REVENUE OPPORTUNITIES TAB -->
-<div class="panel" id="tab-opportunity">
-<div class="callout info">
-<div class="callout-title">Untapped affiliate and directory revenue — available now</div>
-<p>Bass Forecast articles mention lakes, recommend gear, and reference local services — but almost none of it is monetized. Every lake page becomes a hub for affiliate revenue, directory listings, and booking commissions.</p>
 </div>
 
-<h3 style="margin-bottom:12px;color:#f8fafc">Affiliate Programs — Instant Revenue on Lake Pages</h3>
-<p style="color:#94a3b8;font-size:0.85rem;margin-bottom:12px">These affiliate programs are live and accepting signups. Each one plugs into lake pages as a module — "where to stay near Lake Fork", "camping near Guntersville", etc.</p>
+<!-- REVENUE OPPORTUNITIES -->
+<div class="section" id="tab-revenue">
+<p class="section-intro">Untapped affiliate and directory revenue. Every lake page becomes a hub for commissions and listing fees.</p>
+
+<div class="card">
+<div class="card-title">Affiliate Programs &mdash; Revenue on Lake Pages</div>
 <table>
-<thead><tr><th>Program</th><th>What It Is</th><th>Commission</th><th>How It Works on Lake Pages</th></tr></thead>
+<thead><tr><th>Program</th><th>Commission</th><th>How It Works</th></tr></thead>
 <tbody>
-<tr><td><strong>Booking.com</strong></td><td>Hotels, cabins, lodges</td><td>25-40% of Booking.com's commission</td><td>"Where to stay near [Lake]" — search by lat/lon via affiliate API</td></tr>
-<tr><td><strong>VRBO (Expedia Group)</strong></td><td>Vacation rentals, lake houses</td><td>2-6% per booking</td><td>"Lake houses and cabins near [Lake]" — affiliate deep links</td></tr>
-<tr><td><strong>Hipcamp</strong></td><td>Camping, glamping, RV sites</td><td>Via AvantLink affiliate network</td><td>"Camping near [Lake]" — filtered by boat ramp proximity</td></tr>
-<tr><td><strong>Tackle Warehouse</strong></td><td>Fishing gear (existing partner)</td><td>Already active — fix tracking first</td><td>Bait Advisor recommendations per lake, gear for local conditions</td></tr>
-<tr><td><strong>Omnia Fishing</strong></td><td>Fishing gear (existing partner)</td><td>Already active</td><td>Lake-specific tackle recommendations</td></tr>
-<tr><td><strong>Amazon Associates</strong></td><td>Everything else</td><td>1-10% depending on category</td><td>Coolers, kayaks, electronics, rod holders — gear for the trip</td></tr>
-<tr><td><strong>Bass Pro / Cabela's</strong></td><td>Fishing + outdoor gear</td><td>5-7% typical</td><td>Alternative to TW/Omnia for broader outdoor gear</td></tr>
+<tr><td><strong>Booking.com</strong></td><td>25-40% of their commission</td><td>"Where to stay near [Lake]" via affiliate API</td></tr>
+<tr><td><strong>VRBO (Expedia)</strong></td><td>2-6% per booking</td><td>"Lake houses near [Lake]" affiliate deep links</td></tr>
+<tr><td><strong>Hipcamp</strong></td><td>Via AvantLink</td><td>"Camping near [Lake]" filtered by boat ramp proximity</td></tr>
+<tr><td><strong>Tackle Warehouse</strong></td><td>Existing partner</td><td>Bait Advisor recommendations per lake &mdash; fix tracking first</td></tr>
+<tr><td><strong>Omnia Fishing</strong></td><td>Existing partner</td><td>Lake-specific tackle recommendations</td></tr>
+<tr><td><strong>Amazon Associates</strong></td><td>1-10% by category</td><td>Coolers, kayaks, electronics, accessories</td></tr>
+<tr><td><strong>Bass Pro / Cabela's</strong></td><td>5-7% typical</td><td>Broader outdoor gear</td></tr>
 </tbody>
 </table>
+</div>
 
-<h3 style="margin:24px 0 12px;color:#f8fafc">Directory Revenue — Free Listings That Upsell</h3>
-<p style="color:#94a3b8;font-size:0.85rem;margin-bottom:12px">Each directory starts free (seed with scraped data), then offers featured/premium placement. These live on lake pages AND as standalone searchable directories.</p>
+<div class="card">
+<div class="card-title">Directories &mdash; Free Listings That Upsell</div>
 <table>
-<thead><tr><th>Directory</th><th>Free Listing</th><th>Featured Listing</th><th>Where It Lives</th></tr></thead>
+<thead><tr><th>Directory</th><th>Free</th><th>Featured</th></tr></thead>
 <tbody>
-<tr><td><strong>Fishing Guide Directory</strong></td><td>Name, location, species, contact</td><td>$99-299/month — top placement, photos, reviews, booking link</td><td>Every lake page + standalone /guides</td></tr>
-<tr><td><strong>Marina Directory</strong></td><td>Name, location, basic services</td><td>$99-199/month — fuel prices, slip availability, photos</td><td>Every lake page + standalone /marinas</td></tr>
-<tr><td><strong>Tackle Shop Directory</strong></td><td>Name, location, hours</td><td>$99-299/month — inventory, deals, Bait Advisor integration</td><td>Every lake page + standalone /shops</td></tr>
-<tr><td><strong>Tournament Calendar</strong></td><td>Date, lake, format, entry fee</td><td>$99-299/month — featured placement for organizers</td><td>Every lake page + standalone /tournaments</td></tr>
-<tr><td><strong>Ice Locator</strong></td><td>Location, type (machine/bags/bulk)</td><td>$49-199/month — sponsored placement (YETI, Engel, marinas, gas stations)</td><td>Every lake page + standalone /ice</td></tr>
-<tr><td><strong>Live Bait Tracker</strong></td><td>Shop name, species available</td><td>$99-299/month — real-time inventory, Epic day demand alerts, SMS notifications</td><td>Every lake page + standalone /bait</td></tr>
+<tr><td><strong>Fishing Guides</strong></td><td>Name, location, species</td><td>$99-299/month</td></tr>
+<tr><td><strong>Marinas</strong></td><td>Name, location, services</td><td>$99-199/month</td></tr>
+<tr><td><strong>Tackle Shops</strong></td><td>Name, location, hours</td><td>$99-299/month</td></tr>
+<tr><td><strong>Tournaments</strong></td><td>Date, lake, format</td><td>$99-299/month</td></tr>
+<tr><td><strong>Ice Locator</strong></td><td>Location, type</td><td>$49-199/month</td></tr>
+<tr><td><strong>Live Bait Tracker</strong></td><td>Shop, species available</td><td>$99-299/month</td></tr>
 </tbody>
 </table>
+</div>
 
-<h3 style="margin:24px 0 12px;color:#f8fafc">Marketplace Commissions — Where It Goes Next</h3>
+<div class="card">
+<div class="card-title">Marketplace &mdash; Where It Goes Next</div>
 <table>
-<thead><tr><th>Marketplace Feature</th><th>Revenue Model</th><th>Builds On</th></tr></thead>
+<thead><tr><th>Feature</th><th>Revenue</th><th>Builds On</th></tr></thead>
 <tbody>
-<tr><td><strong>Guide Booking</strong></td><td>10% booking commission</td><td>Guide directory → add online booking</td></tr>
-<tr><td><strong>Lodge/Cabin Booking</strong></td><td>3-6% via VRBO/Booking.com affiliate</td><td>Lodging affiliate links → curated recommendations</td></tr>
-<tr><td><strong>Camping Reservations</strong></td><td>Hipcamp affiliate + Recreation.gov deep links</td><td>Camping module on lake pages</td></tr>
-<tr><td><strong>Kayak/Boat Rentals</strong></td><td>Listing fees $99-199/month</td><td>Marina directory → add rental inventory</td></tr>
-<tr><td><strong>Newsletter Sponsorships</strong></td><td>$10,000-25,000/month</td><td>Segmented regional fishing reports</td></tr>
+<tr><td><strong>Guide Booking</strong></td><td>10% commission</td><td>Guide directory</td></tr>
+<tr><td><strong>Lodge/Cabin Booking</strong></td><td>3-6% via VRBO/Booking.com</td><td>Lodging affiliates</td></tr>
+<tr><td><strong>Camping Reservations</strong></td><td>Hipcamp + Recreation.gov</td><td>Camping module</td></tr>
+<tr><td><strong>Newsletter Sponsorships</strong></td><td>$10,000-25,000/month</td><td>Segmented regional reports</td></tr>
 </tbody>
 </table>
+</div>
 
-<div class="callout" style="margin-top:24px;border-color:#22c55e">
-<div class="callout-title" style="color:#86efac">What a single lake page looks like fully built</div>
-<p>Take Lake Fork, Texas. One page with: Bass Forecast rating, weather, lake level (USGS), tournament history (Bassmaster API — free), nearby boat ramps, tackle shops, bait shops, fishing guides, marinas, lodging (Booking.com affiliate), camping (Recreation.gov + Hipcamp), ice locator, live bait tracker. Every module is either free data, affiliate revenue, or directory listing revenue. Multiply by 10,000 lakes.</p>
+<div class="callout green">
+<div class="callout-title">What a single lake page looks like fully built</div>
+<p>Lake Fork, Texas: BFR rating, weather, lake level, tournament history, boat ramps, tackle shops, bait shops, guides, marinas, lodging, camping, ice, live bait. Every module is free data, affiliate revenue, or directory listing revenue. Multiply by 10,000 lakes. <strong><a href="demo-lake-fork.html" target="_blank">See the demo &rarr;</a></strong></p>
 </div>
 </div>
 
-<!-- 90-DAY PLAN TAB -->
-<div class="panel" id="tab-plan">
-<div class="callout info">
-<div class="callout-title">Three tracks running in parallel — fix, personalize, build</div>
-</div>
+<!-- 90-DAY PLAN -->
+<div class="section" id="tab-plan">
 
-<h3 style="margin-bottom:12px;color:#f8fafc">Track 1: Fix the Leaks (Weeks 1-2)</h3>
-<table>
-<thead><tr><th>Deliverable</th><th>Details</th></tr></thead>
-<tbody>
-<tr><td><strong>Fix 35 broken affiliate links</strong></td><td>All verified 404s from this audit — replace with current product URLs</td></tr>
-<tr><td><strong>Fix 175 malformed tracking params</strong></td><td>?=BFOR → ?from=BFOR across all articles</td></tr>
-<tr><td><strong>Automated link monitoring</strong></td><td>Scraper runs weekly — flags new 404s and broken redirects before they cost money</td></tr>
-<tr><td><strong>Replace manual affiliate process</strong></td><td>Eliminate the $10/hr manual link insertion entirely</td></tr>
-<tr><td><strong>Technical SEO quick wins</strong></td><td>Homepage H1, structured data, noindex old outlooks, fix sitemap, schema types, Twitter Cards</td></tr>
-</tbody>
-</table>
-
-<h3 style="margin:24px 0 12px;color:#f8fafc">Track 2: Newsletter Personalization (Weeks 2-6)</h3>
+<div class="card">
+<div class="card-title">Track 1: Fix the Leaks <span class="card-badge blue">Weeks 1-2</span></div>
 <table>
 <thead><tr><th>Deliverable</th><th>Details</th></tr></thead>
 <tbody>
-<tr><td><strong>Segment 500K subscribers</strong></td><td>By skill level (new/advanced), fishing style (boat/bank/dock), region, species interest</td></tr>
-<tr><td><strong>Automate sends</strong></td><td>Move from manual 2x/week to automated flows triggered by cohort + BFR data</td></tr>
-<tr><td><strong>Regional fishing reports</strong></td><td>Personalized content by region — Epic day alerts, seasonal patterns, local lake conditions</td></tr>
-<tr><td><strong>Content repurposing</strong></td><td>Turn 300+ existing articles into segmented newsletter content — podcasts, bite-size snippets</td></tr>
-<tr><td><strong>Welcome sequences</strong></td><td>New subscriber flows by cohort — beginner gets different onboarding than tournament angler</td></tr>
+<tr><td><strong>Fix 35 broken affiliate links</strong></td><td>All verified 404s &mdash; replace with current product URLs</td></tr>
+<tr><td><strong>Fix 175 malformed tracking</strong></td><td>?=BFOR &rarr; ?from=BFOR across all articles</td></tr>
+<tr><td><strong>Automated link monitoring</strong></td><td>Scraper runs weekly &mdash; flags new 404s before they cost money</td></tr>
+<tr><td><strong>Replace manual process</strong></td><td>Eliminate the $10/hr manual link insertion</td></tr>
+<tr><td><strong>Technical SEO quick wins</strong></td><td>H1, structured data, noindex outlooks, sitemap, schema, Twitter Cards</td></tr>
 </tbody>
 </table>
+</div>
 
-<h3 style="margin:24px 0 12px;color:#f8fafc">Track 3: Lake Pages + Ecosystem (Weeks 3-12)</h3>
+<div class="card">
+<div class="card-title">Track 2: Newsletter Personalization <span class="card-badge blue">Weeks 2-6</span></div>
+<table>
+<thead><tr><th>Deliverable</th><th>Details</th></tr></thead>
+<tbody>
+<tr><td><strong>Segment 500K subscribers</strong></td><td>By skill level, fishing style, region, species interest</td></tr>
+<tr><td><strong>Automate sends</strong></td><td>Manual 2x/week &rarr; automated flows triggered by cohort + BFR</td></tr>
+<tr><td><strong>Regional fishing reports</strong></td><td>Personalized by region &mdash; Epic day alerts, seasonal patterns</td></tr>
+<tr><td><strong>Content repurposing</strong></td><td>300+ articles into segmented newsletter content + podcasts</td></tr>
+<tr><td><strong>Welcome sequences</strong></td><td>New subscriber flows by cohort</td></tr>
+</tbody>
+</table>
+</div>
 
-<h4 style="color:#94a3b8;margin:16px 0 8px">Phase 1: Template + Free Data (Weeks 3-6)</h4>
+<div class="card">
+<div class="card-title">Track 3: Lake Pages + Ecosystem <span class="card-badge blue">Weeks 3-12</span></div>
+
+<p style="color:#94a3b8;font-size:0.85rem;margin:12px 0 4px;font-weight:600">Phase 1: Template + Free Data (Weeks 3-6)</p>
 <table>
 <thead><tr><th>Module</th><th>Data Source</th><th>Cost</th></tr></thead>
 <tbody>
-<tr><td>Bass Forecast Rating</td><td>Internal app data</td><td>Free</td></tr>
-<tr><td>Weather forecast</td><td>AccuWeather (existing) + NOAA API</td><td>Free</td></tr>
+<tr><td>BFR Rating</td><td>Internal app data</td><td>Free</td></tr>
+<tr><td>Weather</td><td>AccuWeather + NOAA API</td><td>Free</td></tr>
 <tr><td>Lake level</td><td>USGS Water Services API</td><td>Free</td></tr>
-<tr><td>Tournament history</td><td>Bassmaster REST API (no auth, clean JSON)</td><td>Free</td></tr>
-<tr><td>Nearby tackle/bait shops</td><td>Google Places API</td><td>~$32/1K queries</td></tr>
-<tr><td>Nearby lodging</td><td>Booking.com / VRBO affiliate APIs</td><td>Free (affiliate)</td></tr>
-<tr><td>Nearby camping</td><td>Recreation.gov RIDB API</td><td>Free</td></tr>
-<tr><td>Boat ramps</td><td>USACE + state agencies + OpenStreetMap</td><td>Free</td></tr>
+<tr><td>Tournament history</td><td>Bassmaster REST API (no auth)</td><td>Free</td></tr>
+<tr><td>Tackle/bait shops</td><td>Google Places API</td><td>~$32/1K</td></tr>
+<tr><td>Lodging</td><td>Booking.com / VRBO affiliate</td><td>Free</td></tr>
+<tr><td>Camping</td><td>Recreation.gov RIDB API</td><td>Free</td></tr>
+<tr><td>Boat ramps</td><td>USACE + state agencies + OSM</td><td>Free</td></tr>
 </tbody>
 </table>
-<p style="color:#86efac;font-size:0.85rem;margin-top:8px">Target: 49 state pages by week 5. First 100 lake pages by week 6.</p>
+<p style="color:#22c55e;font-size:0.8rem;margin-top:8px">Target: 49 state pages by week 5. First 100 lake pages by week 6.</p>
 
-<h4 style="color:#94a3b8;margin:16px 0 8px">Phase 2: Directories + Scrapers (Weeks 6-10)</h4>
+<p style="color:#94a3b8;font-size:0.85rem;margin:20px 0 4px;font-weight:600">Phase 2: Directories + Scrapers (Weeks 6-10)</p>
 <table>
 <thead><tr><th>Directory</th><th>Seed Data From</th></tr></thead>
 <tbody>
-<tr><td>Fishing guide directory</td><td>Scrape FishingBooker, state license databases, Google Places</td></tr>
-<tr><td>Marina directory</td><td>Scrape Marinas.com, USACE, state agencies</td></tr>
-<tr><td>Tackle shop directory</td><td>Google Places + Yelp APIs</td></tr>
-<tr><td>Tournament calendar</td><td>Bassmaster API + TourneyX scraping</td></tr>
-<tr><td>Ice locator</td><td>Built from scratch — no data source exists</td></tr>
-<tr><td>Live bait tracker</td><td>Built from scratch — no data source exists</td></tr>
+<tr><td>Fishing guides</td><td>Scrape FishingBooker, state licenses, Google Places</td></tr>
+<tr><td>Marinas</td><td>Scrape Marinas.com, USACE, state agencies</td></tr>
+<tr><td>Tackle shops</td><td>Google Places + Yelp APIs</td></tr>
+<tr><td>Tournaments</td><td>Bassmaster API + TourneyX</td></tr>
+<tr><td>Ice locator</td><td>Built from scratch &mdash; no data source exists</td></tr>
+<tr><td>Live bait tracker</td><td>Built from scratch &mdash; no data source exists</td></tr>
 </tbody>
 </table>
 
-<h4 style="color:#94a3b8;margin:16px 0 8px">Phase 3: Marketplace Foundation (Weeks 10-12)</h4>
+<p style="color:#94a3b8;font-size:0.85rem;margin:20px 0 4px;font-weight:600">Phase 3: Marketplace Foundation (Weeks 10-12)</p>
 <table>
-<thead><tr><th>Feature</th><th>Revenue Model</th></tr></thead>
+<thead><tr><th>Feature</th><th>Revenue</th></tr></thead>
 <tbody>
-<tr><td>Guide booking system</td><td>10% booking commission</td></tr>
-<tr><td>Lodge/cabin affiliate links</td><td>3-6% per booking via VRBO/Booking.com</td></tr>
-<tr><td>Camping affiliate links</td><td>Hipcamp (AvantLink) + Recreation.gov deep links</td></tr>
-<tr><td>Directory featured listings</td><td>$99-299/month per listing across all directories</td></tr>
-<tr><td>Newsletter sponsorships</td><td>Segmented regional reports command premium rates</td></tr>
+<tr><td>Guide booking</td><td>10% commission</td></tr>
+<tr><td>Lodge/cabin affiliates</td><td>3-6% via VRBO/Booking.com</td></tr>
+<tr><td>Camping affiliates</td><td>Hipcamp + Recreation.gov</td></tr>
+<tr><td>Featured listings</td><td>$99-299/month across all directories</td></tr>
+<tr><td>Newsletter sponsorships</td><td>Segmented regional reports</td></tr>
 </tbody>
 </table>
-
-<h3 style="margin:24px 0 12px;color:#f8fafc">How 10,000 Lake Pages Avoid Thin Content</h3>
-<div class="callout warning" style="margin-bottom:16px">
-<div class="callout-title">The question Landon will ask: "Won't Google see template pages as thin content?"</div>
-<p>It would be — if we just slapped a weather widget and a Google Places search on 10,000 pages. Here's how we avoid that.</p>
 </div>
+
+<div class="card">
+<div class="card-title">How 10,000 Lake Pages Avoid Thin Content</div>
 <table>
 <thead><tr><th>What Makes It Not Thin</th><th>Why Google Cares</th></tr></thead>
 <tbody>
-<tr><td><strong>BFR rating changes daily per lake</strong></td><td>Proprietary data nobody else has. Fresh every day. Google re-crawls pages with changing data.</td></tr>
-<tr><td><strong>Bait Advisor recommendations shift with conditions</strong></td><td>Also proprietary. Different output per lake per day. Can't be scraped from anywhere else.</td></tr>
-<tr><td><strong>Dynamic meta descriptions</strong></td><td>"Lake Fork BFR: 8.4 (Epic) today. Water level 400.28 ft." Changes daily — same technique LakeMonster uses on 17,747 pages.</td></tr>
-<tr><td><strong>Tournament history from Bassmaster API</strong></td><td>Unique structured data per lake. Multi-year results with weights, anglers, placements.</td></tr>
-<tr><td><strong>User-generated content</strong></td><td>Lunker Club catches tagged to lakes. Guide reviews. Fishing reports. Content Google can't find elsewhere.</td></tr>
-<tr><td><strong>Directory listings are self-updating</strong></td><td>Guides, marinas, shops update their own profiles. Continuous fresh content without editorial effort.</td></tr>
-<tr><td><strong>Editorial content per lake</strong></td><td>Mine 300+ existing articles for lake-specific content. Seasonal patterns, structure, local knowledge.</td></tr>
+<tr><td><strong>BFR rating changes daily</strong></td><td>Proprietary. Fresh every day. Google re-crawls pages with changing data.</td></tr>
+<tr><td><strong>Bait Advisor shifts with conditions</strong></td><td>Different output per lake per day. Can't be scraped from anywhere else.</td></tr>
+<tr><td><strong>Dynamic meta descriptions</strong></td><td>"Lake Fork BFR: 8.4 (Epic) today" &mdash; same technique LakeMonster uses on 17,747 pages.</td></tr>
+<tr><td><strong>Tournament history</strong></td><td>Unique structured data per lake. Multi-year results.</td></tr>
+<tr><td><strong>User-generated content</strong></td><td>Lunker Club catches, guide reviews, fishing reports.</td></tr>
+<tr><td><strong>Self-updating directories</strong></td><td>Guides and shops update their own profiles. Continuous fresh content.</td></tr>
 </tbody>
 </table>
+<div class="callout orange" style="margin-top:16px">
+<div class="callout-title">Launch strategy</div>
+<p><strong>Start with 100 lakes, not 10,000.</strong> Only launch lakes with rich data &mdash; tournament history, multiple guides, active catches. Every page needs editorial content specific to that lake. Don't build empty pages. Prove they rank, then scale.</p>
+</div>
+</div>
 
-<h4 style="color:#94a3b8;margin:16px 0 8px">The launch strategy that prevents thin pages</h4>
-<table>
-<thead><tr><th>Rule</th><th>Why</th></tr></thead>
-<tbody>
-<tr><td><strong>Start with 100 lakes, not 10,000</strong></td><td>Launch only lakes with rich data — tournament history, multiple guides, active catches. Prove they rank, then scale.</td></tr>
-<tr><td><strong>Every page needs at least one editorial section</strong></td><td>Lake-specific seasonal patterns, structure tips, local knowledge. AI-assisted but specific to that lake — not generic filler.</td></tr>
-<tr><td><strong>Don't build empty pages</strong></td><td>A lake with no tournaments, no guides, no catches, and no editorial = thin. Don't publish it until there's enough data.</td></tr>
-<tr><td><strong>Internal linking from existing articles</strong></td><td>Every article mentioning Lake Fork links to the Lake Fork page. Builds topical authority, not just page count.</td></tr>
-<tr><td><strong>Directories are the long-term moat</strong></td><td>Once guides and shops are listing and updating themselves, that's a platform — not a template.</td></tr>
-</tbody>
-</table>
-
-<h3 style="margin:24px 0 12px;color:#f8fafc">What's Needed to Start</h3>
+<div class="card">
+<div class="card-title">What's Needed to Start</div>
 <table>
 <thead><tr><th>Access</th><th>Why</th><th>When</th></tr></thead>
 <tbody>
@@ -510,20 +534,20 @@ Both appear on the same pages — meaning someone got it right sometimes and wro
 </tbody>
 </table>
 </div>
-
-<div class="footer">
-Bass Forecast Site Audit — April 2026 — Prepared by Bill Welch<br>
-All data from public sources. Every link verified live. 226 articles crawled.
 </div>
 
+<div class="footer">
+Bass Forecast Site Audit &mdash; April 2026 &mdash; Prepared by Bill Welch<br>
+All data from public sources. Every link verified via curl. 226 articles crawled.
 </div>
 
 <script>
-function showTab(name){
-document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
-document.getElementById('tab-'+name).classList.add('active');
+function showTab(id){
+document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+document.getElementById('tab-'+id).classList.add('active');
 event.target.classList.add('active');
+window.scrollTo({top:document.querySelector('.nav').offsetTop,behavior:'smooth'});
 }
 </script>
 </body>
