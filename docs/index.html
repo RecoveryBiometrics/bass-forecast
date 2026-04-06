@@ -102,6 +102,8 @@ a:hover{text-decoration:underline;color:#93bbfd}
 <div class="tab" onclick="showTab('states')">State Pages</div>
 <div class="tab" onclick="showTab('lakes')">Lake Pages</div>
 <div class="tab" onclick="showTab('seo')">SEO Issues</div>
+<div class="tab" onclick="showTab('opportunity')">Revenue Opportunities</div>
+<div class="tab" onclick="showTab('plan')">90-Day Plan</div>
 </div>
 
 <!-- BROKEN LINKS TAB -->
@@ -335,8 +337,151 @@ Both appear on the same pages — meaning someone got it right sometimes and wro
 </table>
 </div>
 
+<!-- REVENUE OPPORTUNITIES TAB -->
+<div class="panel" id="tab-opportunity">
+<div class="callout info">
+<div class="callout-title">Untapped affiliate and directory revenue — available now</div>
+<p>Bass Forecast articles mention lakes, recommend gear, and reference local services — but almost none of it is monetized. Every lake page becomes a hub for affiliate revenue, directory listings, and booking commissions.</p>
+</div>
+
+<h3 style="margin-bottom:12px;color:#f8fafc">Affiliate Programs — Instant Revenue on Lake Pages</h3>
+<p style="color:#94a3b8;font-size:0.85rem;margin-bottom:12px">These affiliate programs are live and accepting signups. Each one plugs into lake pages as a module — "where to stay near Lake Fork", "camping near Guntersville", etc.</p>
+<table>
+<thead><tr><th>Program</th><th>What It Is</th><th>Commission</th><th>How It Works on Lake Pages</th></tr></thead>
+<tbody>
+<tr><td><strong>Booking.com</strong></td><td>Hotels, cabins, lodges</td><td>25-40% of Booking.com's commission</td><td>"Where to stay near [Lake]" — search by lat/lon via affiliate API</td></tr>
+<tr><td><strong>VRBO (Expedia Group)</strong></td><td>Vacation rentals, lake houses</td><td>2-6% per booking</td><td>"Lake houses and cabins near [Lake]" — affiliate deep links</td></tr>
+<tr><td><strong>Hipcamp</strong></td><td>Camping, glamping, RV sites</td><td>Via AvantLink affiliate network</td><td>"Camping near [Lake]" — filtered by boat ramp proximity</td></tr>
+<tr><td><strong>Tackle Warehouse</strong></td><td>Fishing gear (existing partner)</td><td>Already active — fix tracking first</td><td>Bait Advisor recommendations per lake, gear for local conditions</td></tr>
+<tr><td><strong>Omnia Fishing</strong></td><td>Fishing gear (existing partner)</td><td>Already active</td><td>Lake-specific tackle recommendations</td></tr>
+<tr><td><strong>Amazon Associates</strong></td><td>Everything else</td><td>1-10% depending on category</td><td>Coolers, kayaks, electronics, rod holders — gear for the trip</td></tr>
+<tr><td><strong>Bass Pro / Cabela's</strong></td><td>Fishing + outdoor gear</td><td>5-7% typical</td><td>Alternative to TW/Omnia for broader outdoor gear</td></tr>
+</tbody>
+</table>
+
+<h3 style="margin:24px 0 12px;color:#f8fafc">Directory Revenue — Free Listings That Upsell</h3>
+<p style="color:#94a3b8;font-size:0.85rem;margin-bottom:12px">Each directory starts free (seed with scraped data), then offers featured/premium placement. These live on lake pages AND as standalone searchable directories.</p>
+<table>
+<thead><tr><th>Directory</th><th>Free Listing</th><th>Featured Listing</th><th>Where It Lives</th></tr></thead>
+<tbody>
+<tr><td><strong>Fishing Guide Directory</strong></td><td>Name, location, species, contact</td><td>$99-299/month — top placement, photos, reviews, booking link</td><td>Every lake page + standalone /guides</td></tr>
+<tr><td><strong>Marina Directory</strong></td><td>Name, location, basic services</td><td>$99-199/month — fuel prices, slip availability, photos</td><td>Every lake page + standalone /marinas</td></tr>
+<tr><td><strong>Tackle Shop Directory</strong></td><td>Name, location, hours</td><td>$99-299/month — inventory, deals, Bait Advisor integration</td><td>Every lake page + standalone /shops</td></tr>
+<tr><td><strong>Tournament Calendar</strong></td><td>Date, lake, format, entry fee</td><td>$99-299/month — featured placement for organizers</td><td>Every lake page + standalone /tournaments</td></tr>
+<tr><td><strong>Ice Locator</strong></td><td>Location, type (machine/bags/bulk)</td><td>$49-199/month — sponsored placement (YETI, Engel, marinas, gas stations)</td><td>Every lake page + standalone /ice</td></tr>
+<tr><td><strong>Live Bait Tracker</strong></td><td>Shop name, species available</td><td>$99-299/month — real-time inventory, Epic day demand alerts, SMS notifications</td><td>Every lake page + standalone /bait</td></tr>
+</tbody>
+</table>
+
+<h3 style="margin:24px 0 12px;color:#f8fafc">Marketplace Commissions — Where It Goes Next</h3>
+<table>
+<thead><tr><th>Marketplace Feature</th><th>Revenue Model</th><th>Builds On</th></tr></thead>
+<tbody>
+<tr><td><strong>Guide Booking</strong></td><td>10% booking commission</td><td>Guide directory → add online booking</td></tr>
+<tr><td><strong>Lodge/Cabin Booking</strong></td><td>3-6% via VRBO/Booking.com affiliate</td><td>Lodging affiliate links → curated recommendations</td></tr>
+<tr><td><strong>Camping Reservations</strong></td><td>Hipcamp affiliate + Recreation.gov deep links</td><td>Camping module on lake pages</td></tr>
+<tr><td><strong>Kayak/Boat Rentals</strong></td><td>Listing fees $99-199/month</td><td>Marina directory → add rental inventory</td></tr>
+<tr><td><strong>Newsletter Sponsorships</strong></td><td>$10,000-25,000/month</td><td>Segmented regional fishing reports</td></tr>
+</tbody>
+</table>
+
+<div class="callout" style="margin-top:24px;border-color:#22c55e">
+<div class="callout-title" style="color:#86efac">What a single lake page looks like fully built</div>
+<p>Take Lake Fork, Texas. One page with: Bass Forecast rating, weather, lake level (USGS), tournament history (Bassmaster API — free), nearby boat ramps, tackle shops, bait shops, fishing guides, marinas, lodging (Booking.com affiliate), camping (Recreation.gov + Hipcamp), ice locator, live bait tracker. Every module is either free data, affiliate revenue, or directory listing revenue. Multiply by 10,000 lakes.</p>
+</div>
+</div>
+
+<!-- 90-DAY PLAN TAB -->
+<div class="panel" id="tab-plan">
+<div class="callout info">
+<div class="callout-title">Three tracks running in parallel — fix, personalize, build</div>
+</div>
+
+<h3 style="margin-bottom:12px;color:#f8fafc">Track 1: Fix the Leaks (Weeks 1-2)</h3>
+<table>
+<thead><tr><th>Deliverable</th><th>Details</th></tr></thead>
+<tbody>
+<tr><td><strong>Fix 35 broken affiliate links</strong></td><td>All verified 404s from this audit — replace with current product URLs</td></tr>
+<tr><td><strong>Fix 175 malformed tracking params</strong></td><td>?=BFOR → ?from=BFOR across all articles</td></tr>
+<tr><td><strong>Automated link monitoring</strong></td><td>Scraper runs weekly — flags new 404s and broken redirects before they cost money</td></tr>
+<tr><td><strong>Replace manual affiliate process</strong></td><td>Eliminate the $10/hr manual link insertion entirely</td></tr>
+<tr><td><strong>Technical SEO quick wins</strong></td><td>Homepage H1, structured data, noindex old outlooks, fix sitemap, schema types, Twitter Cards</td></tr>
+</tbody>
+</table>
+
+<h3 style="margin:24px 0 12px;color:#f8fafc">Track 2: Newsletter Personalization (Weeks 2-6)</h3>
+<table>
+<thead><tr><th>Deliverable</th><th>Details</th></tr></thead>
+<tbody>
+<tr><td><strong>Segment 500K subscribers</strong></td><td>By skill level (new/advanced), fishing style (boat/bank/dock), region, species interest</td></tr>
+<tr><td><strong>Automate sends</strong></td><td>Move from manual 2x/week to automated flows triggered by cohort + BFR data</td></tr>
+<tr><td><strong>Regional fishing reports</strong></td><td>Personalized content by region — Epic day alerts, seasonal patterns, local lake conditions</td></tr>
+<tr><td><strong>Content repurposing</strong></td><td>Turn 300+ existing articles into segmented newsletter content — podcasts, bite-size snippets</td></tr>
+<tr><td><strong>Welcome sequences</strong></td><td>New subscriber flows by cohort — beginner gets different onboarding than tournament angler</td></tr>
+</tbody>
+</table>
+
+<h3 style="margin:24px 0 12px;color:#f8fafc">Track 3: Lake Pages + Ecosystem (Weeks 3-12)</h3>
+
+<h4 style="color:#94a3b8;margin:16px 0 8px">Phase 1: Template + Free Data (Weeks 3-6)</h4>
+<table>
+<thead><tr><th>Module</th><th>Data Source</th><th>Cost</th></tr></thead>
+<tbody>
+<tr><td>Bass Forecast Rating</td><td>Internal app data</td><td>Free</td></tr>
+<tr><td>Weather forecast</td><td>AccuWeather (existing) + NOAA API</td><td>Free</td></tr>
+<tr><td>Lake level</td><td>USGS Water Services API</td><td>Free</td></tr>
+<tr><td>Tournament history</td><td>Bassmaster REST API (no auth, clean JSON)</td><td>Free</td></tr>
+<tr><td>Nearby tackle/bait shops</td><td>Google Places API</td><td>~$32/1K queries</td></tr>
+<tr><td>Nearby lodging</td><td>Booking.com / VRBO affiliate APIs</td><td>Free (affiliate)</td></tr>
+<tr><td>Nearby camping</td><td>Recreation.gov RIDB API</td><td>Free</td></tr>
+<tr><td>Boat ramps</td><td>USACE + state agencies + OpenStreetMap</td><td>Free</td></tr>
+</tbody>
+</table>
+<p style="color:#86efac;font-size:0.85rem;margin-top:8px">Target: 49 state pages by week 5. First 100 lake pages by week 6.</p>
+
+<h4 style="color:#94a3b8;margin:16px 0 8px">Phase 2: Directories + Scrapers (Weeks 6-10)</h4>
+<table>
+<thead><tr><th>Directory</th><th>Seed Data From</th></tr></thead>
+<tbody>
+<tr><td>Fishing guide directory</td><td>Scrape FishingBooker, state license databases, Google Places</td></tr>
+<tr><td>Marina directory</td><td>Scrape Marinas.com, USACE, state agencies</td></tr>
+<tr><td>Tackle shop directory</td><td>Google Places + Yelp APIs</td></tr>
+<tr><td>Tournament calendar</td><td>Bassmaster API + TourneyX scraping</td></tr>
+<tr><td>Ice locator</td><td>Built from scratch — no data source exists</td></tr>
+<tr><td>Live bait tracker</td><td>Built from scratch — no data source exists</td></tr>
+</tbody>
+</table>
+
+<h4 style="color:#94a3b8;margin:16px 0 8px">Phase 3: Marketplace Foundation (Weeks 10-12)</h4>
+<table>
+<thead><tr><th>Feature</th><th>Revenue Model</th></tr></thead>
+<tbody>
+<tr><td>Guide booking system</td><td>10% booking commission</td></tr>
+<tr><td>Lodge/cabin affiliate links</td><td>3-6% per booking via VRBO/Booking.com</td></tr>
+<tr><td>Camping affiliate links</td><td>Hipcamp (AvantLink) + Recreation.gov deep links</td></tr>
+<tr><td>Directory featured listings</td><td>$99-299/month per listing across all directories</td></tr>
+<tr><td>Newsletter sponsorships</td><td>Segmented regional reports command premium rates</td></tr>
+</tbody>
+</table>
+
+<h3 style="margin:24px 0 12px;color:#f8fafc">What's Needed to Start</h3>
+<table>
+<thead><tr><th>Access</th><th>Why</th><th>When</th></tr></thead>
+<tbody>
+<tr><td>Staging environment</td><td>Never touch production</td><td>Week 1</td></tr>
+<tr><td>Developer name + contact</td><td>Coordinate technical work</td><td>Week 1</td></tr>
+<tr><td>GA4 + Search Console</td><td>Baseline metrics</td><td>Week 1</td></tr>
+<tr><td>Affiliate dashboards</td><td>Fix links, track attribution</td><td>Week 1</td></tr>
+<tr><td>Newsletter platform</td><td>Segmentation + automation</td><td>Week 2</td></tr>
+<tr><td>App analytics + cohort data</td><td>Newsletter personalization</td><td>Week 2</td></tr>
+<tr><td>AccuWeather API docs</td><td>Feed lake pages</td><td>Week 3</td></tr>
+<tr><td>BFR data access</td><td>Core lake page module</td><td>Week 3</td></tr>
+</tbody>
+</table>
+</div>
+
 <div class="footer">
-Bass Forecast Site Audit — April 3, 2026 — Prepared by Bill Welch<br>
+Bass Forecast Site Audit — April 2026 — Prepared by Bill Welch<br>
 All data from public sources. Every link verified live. 226 articles crawled.
 </div>
 
